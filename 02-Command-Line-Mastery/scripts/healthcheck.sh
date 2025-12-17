@@ -57,9 +57,12 @@ check_process() {
     log "Checking if ${APP_NAME} process is running..."
     
     if pgrep -f "${APP_NAME}" > /dev/null; then
-        local pid=$(pgrep -f "${APP_NAME}")
-        local cpu=$(ps -p $pid -o %cpu= || echo "0")
-        local mem=$(ps -p $pid -o %mem= || echo "0")
+        local pid
+        pid=$(pgrep -f "${APP_NAME}")
+        local cpu
+        cpu=$(ps -p "$pid" -o %cpu= || echo "0")
+        local mem
+        mem=$(ps -p "$pid" -o %mem= || echo "0")
         log_pass "Process is running (PID: $pid, CPU: ${cpu}%, MEM: ${mem}%)"
         return 0
     else
@@ -71,8 +74,9 @@ check_process() {
 # Check HTTP endpoint
 check_http_endpoint() {
     log "Checking HTTP endpoint: ${APP_HEALTH_ENDPOINT}"
-    
-    local response=$(curl -s -o /dev/null -w "%{http_code}" -m 5 "${APP_HEALTH_ENDPOINT}" 2>/dev/null)
+
+    local response
+    response=$(curl -s -o /dev/null -w "%{http_code}" -m 5 "${APP_HEALTH_ENDPOINT}" 2>/dev/null)
     
     if [ "$response" = "200" ]; then
         log_pass "HTTP endpoint returned 200 OK"
@@ -102,8 +106,9 @@ check_port() {
 # Check CPU usage
 check_cpu() {
     log "Checking CPU usage..."
-    
-    local cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
+
+    local cpu_usage
+    cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
     cpu_usage=$(printf "%.0f" "$cpu_usage")
     
     if [ "$cpu_usage" -ge "$CPU_THRESHOLD" ]; then
@@ -118,8 +123,9 @@ check_cpu() {
 # Check memory usage
 check_memory() {
     log "Checking memory usage..."
-    
-    local mem_usage=$(free | grep Mem | awk '{print int($3/$2 * 100)}')
+
+    local mem_usage
+    mem_usage=$(free | grep Mem | awk '{print int($3/$2 * 100)}')
     
     if [ "$mem_usage" -ge "$MEMORY_THRESHOLD" ]; then
         log_warn "Memory usage is high: ${mem_usage}% (threshold: ${MEMORY_THRESHOLD}%)"
@@ -133,8 +139,9 @@ check_memory() {
 # Check disk usage
 check_disk() {
     log "Checking disk usage..."
-    
-    local disk_usage=$(df -h / | tail -1 | awk '{print $5}' | sed 's/%//')
+
+    local disk_usage
+    disk_usage=$(df -h / | tail -1 | awk '{print $5}' | sed 's/%//')
     
     if [ "$disk_usage" -ge "$DISK_THRESHOLD" ]; then
         log_warn "Disk usage is high: ${disk_usage}% (threshold: ${DISK_THRESHOLD}%)"
@@ -156,12 +163,14 @@ check_log_size() {
         return 0
     fi
     
-    local large_logs=$(find "$log_dir" -type f -size +100M)
-    
+    local large_logs
+    large_logs=$(find "$log_dir" -type f -size +100M)
+
     if [ -n "$large_logs" ]; then
         log_warn "Large log files found (>100MB):"
         echo "$large_logs" | while read -r file; do
-            local size=$(du -h "$file" | cut -f1)
+            local size
+            size=$(du -h "$file" | cut -f1)
             log "  - $file (${size})"
         done
         return 1

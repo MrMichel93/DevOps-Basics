@@ -51,7 +51,8 @@ check_sources() {
 
 # Create backup
 create_backup() {
-    local timestamp=$(date +'%Y%m%d_%H%M%S')
+    local timestamp
+    timestamp=$(date +'%Y%m%d_%H%M%S')
     local backup_file="${BACKUP_DIR}/${BACKUP_NAME}_${timestamp}.tar.gz"
     
     log "Creating backup: ${backup_file}"
@@ -63,7 +64,8 @@ create_backup() {
     }
     
     # Calculate and log backup size
-    local size=$(du -h "${backup_file}" | cut -f1)
+    local size
+    size=$(du -h "${backup_file}" | cut -f1)
     log "Backup created successfully (Size: ${size})"
     
     # Create checksum
@@ -157,8 +159,7 @@ main() {
     fi
     
     # Create backup
-    backup_file=$(create_backup)
-    if [ $? -ne 0 ]; then
+    if ! backup_file=$(create_backup); then
         send_notification "FAILED" "Backup creation failed"
         exit 1
     fi

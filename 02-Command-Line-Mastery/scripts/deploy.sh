@@ -72,8 +72,9 @@ check_prerequisites() {
 
 create_backup() {
     log "Creating backup..."
-    
-    local backup_name="${APP_NAME}_$(date +'%Y%m%d_%H%M%S').tar.gz"
+
+    local backup_name
+    backup_name="${APP_NAME}_$(date +'%Y%m%d_%H%M%S').tar.gz"
     local backup_path="${BACKUP_DIR}/${backup_name}"
     
     mkdir -p "${BACKUP_DIR}"
@@ -87,7 +88,8 @@ create_backup() {
     
     # Keep only last 5 backups
     cd "${BACKUP_DIR}"
-    ls -t | tail -n +6 | xargs -r rm --
+    find . -maxdepth 1 -type f -name "${APP_NAME}_*.tar.gz" -printf '%T@ %p\0' | \
+        sort -zrn | tail -zn +6 | cut -zd' ' -f2- | xargs -0 -r rm --
     log "Cleaned old backups (keeping last 5)"
 }
 
@@ -104,8 +106,9 @@ pull_latest_code() {
         log_error "Failed to pull latest code"
         exit 1
     }
-    
-    local commit=$(git rev-parse --short HEAD)
+
+    local commit
+    commit=$(git rev-parse --short HEAD)
     log_success "Pulled latest code (commit: ${commit})"
 }
 
@@ -205,9 +208,11 @@ rollback() {
     log_error "Deployment failed - rolling back..."
     
     stop_application
-    
+
     # Find latest backup
-    local latest_backup=$(ls -t "${BACKUP_DIR}" | head -1)
+    local latest_backup
+    latest_backup=$(find "${BACKUP_DIR}" -maxdepth 1 -type f -name "${APP_NAME}_*.tar.gz" -printf '%T@ %p\n' | \
+        sort -rn | head -1 | cut -d' ' -f2- | xargs basename)
     
     if [ -n "${latest_backup}" ]; then
         log "Restoring from backup: ${latest_backup}"
