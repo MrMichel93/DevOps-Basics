@@ -378,7 +378,7 @@ logger.error('Query failed');
 
 ## 🚀 Examples
 
-See [examples/](./examples/) for:
+Example configurations coming soon for:
 
 - Application with structured logging
 - Health check implementation
@@ -387,7 +387,7 @@ See [examples/](./examples/) for:
 
 ## 📝 Exercises
 
-See [exercises.md](./exercises.md) for hands-on practice.
+Hands-on exercises coming soon! For now, explore the monitoring tools mentioned above.
 
 ## 🎓 Key Takeaways
 

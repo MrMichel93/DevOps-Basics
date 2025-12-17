@@ -180,24 +180,7 @@ Express.js server in a container.
 - Environment variables
 - **Start**: `cd examples/nodejs-app && docker build -t nodejs-app . && docker run -p 3000:3000 nodejs-app`
 
-### [Full-Stack Application](./examples/full-stack-app/)
-
-Complete application with frontend, backend, and database.
-
-- React frontend
-- Node.js API backend
-- PostgreSQL database
-- Nginx reverse proxy
-- **Start**: `cd examples/full-stack-app && docker compose up`
-
-### [Nginx Reverse Proxy](./examples/nginx-reverse-proxy/)
-
-Load balancer with multiple backend servers.
-
-- Nginx configuration
-- Multiple service instances
-- Health checks
-- **Start**: `cd examples/nginx-reverse-proxy && docker compose up`
+<!-- Full-Stack Application and Nginx Reverse Proxy examples coming soon! -->
 
 ## 🚀 Quick Start
 

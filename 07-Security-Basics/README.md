@@ -377,7 +377,7 @@ jobs:
 
 ## 🚀 Examples
 
-See [examples/](./examples/) for:
+Security example configurations coming soon for:
 
 - `.env.example` template
 - Secure Dockerfile
@@ -386,7 +386,7 @@ See [examples/](./examples/) for:
 
 ## 📝 Exercises
 
-See [exercises.md](./exercises.md) for hands-on security practice.
+Hands-on security exercises coming soon! For now, practice the security concepts covered above.
 
 ## 🎓 Key Takeaways
 

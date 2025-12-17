@@ -530,7 +530,7 @@ jobs:
 
 ## 📝 Exercises
 
-See [exercises.md](./exercises.md) for hands-on practice.
+Hands-on exercises coming soon! For now, try creating your own GitHub Actions workflows based on the examples above.
 
 ## 📖 Resources
 

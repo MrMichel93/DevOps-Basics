@@ -8,13 +8,28 @@
     },
     {
       "pattern": "^https://github.com/octocat"
+    },
+    {
+      "pattern": "^https://reddit.com"
+    },
+    {
+      "pattern": "^https://www.reddit.com"
+    },
+    {
+      "pattern": "^https://explainshell.com"
+    },
+    {
+      "pattern": "^https://twitter.com"
+    },
+    {
+      "pattern": "^https://x.com"
     }
   ],
   "replacementPatterns": [],
   "httpHeaders": [],
-  "timeout": "20s",
+  "timeout": "30s",
   "retryOn429": true,
-  "retryCount": 3,
+  "retryCount": 5,
   "fallbackRetryDelay": "30s",
-  "aliveStatusCodes": [200, 206]
+  "aliveStatusCodes": [200, 206, 403]
 }

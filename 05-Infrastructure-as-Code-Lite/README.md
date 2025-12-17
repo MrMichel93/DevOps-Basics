@@ -314,7 +314,7 @@ services:
 
 ## 🚀 Practical Examples
 
-See [examples/](./examples/) for:
+Example configurations coming soon for:
 
 - Complete Makefile with common tasks
 - Development vs Production compose files
@@ -323,7 +323,7 @@ See [examples/](./examples/) for:
 
 ## 📝 Exercises
 
-See [exercises.md](./exercises.md) for hands-on practice.
+Hands-on exercises coming soon! For now, experiment with the concepts covered above.
 
 ## 🎓 Key Takeaways
 

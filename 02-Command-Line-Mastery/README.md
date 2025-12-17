@@ -103,9 +103,7 @@ Study these to see professional scripting in action!
 
 ## 🏋️ Hands-On Exercises
 
-### [Exercises](./exercises.md)
-
-Progressive exercises to build muscle memory.
+Practice the commands covered in this module by working through the scripts in the `scripts/` directory. Try modifying them and understanding how they work!
 
 ## 🎓 How to Use This Module
 
