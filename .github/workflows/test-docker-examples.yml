@@ -2,12 +2,12 @@ name: Test Docker Examples
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
     paths:
       - '03-Docker-Fundamentals/examples/**'
       - '.github/workflows/test-docker-examples.yml'
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
       - '03-Docker-Fundamentals/examples/**'
 
@@ -15,33 +15,33 @@ jobs:
   test-python-app:
     name: Test Python Docker App
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
+
       - name: Build Python app image
         working-directory: ./03-Docker-Fundamentals/examples/simple-python-app
         run: |
           docker build -t python-app:test .
-      
+
       - name: Run Python app container
         run: |
           docker run -d -p 5000:5000 --name python-test python-app:test
           sleep 5
-      
+
       - name: Test Python app health endpoint
         run: |
           curl -f http://localhost:5000/health || exit 1
           curl -f http://localhost:5000/info || exit 1
-      
+
       - name: Check Python app logs
         if: always()
         run: docker logs python-test
-      
+
       - name: Stop Python app container
         if: always()
         run: docker stop python-test && docker rm python-test
@@ -49,33 +49,33 @@ jobs:
   test-nodejs-app:
     name: Test Node.js Docker App
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
+
       - name: Build Node.js app image
         working-directory: ./03-Docker-Fundamentals/examples/nodejs-app
         run: |
           docker build -t nodejs-app:test .
-      
+
       - name: Run Node.js app container
         run: |
           docker run -d -p 3000:3000 --name nodejs-test nodejs-app:test
           sleep 5
-      
+
       - name: Test Node.js app health endpoint
         run: |
           curl -f http://localhost:3000/health || exit 1
           curl -f http://localhost:3000/api/info || exit 1
-      
+
       - name: Check Node.js app logs
         if: always()
         run: docker logs nodejs-test
-      
+
       - name: Stop Node.js app container
         if: always()
         run: docker stop nodejs-test && docker rm nodejs-test
@@ -83,11 +83,11 @@ jobs:
   docker-compose-test:
     name: Test Docker Compose Examples
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Test Python app with Compose
         working-directory: ./03-Docker-Fundamentals/examples/simple-python-app
         run: |
@@ -95,7 +95,7 @@ jobs:
           sleep 5
           curl -f http://localhost:5000/health || exit 1
           docker compose down
-      
+
       - name: Test Node.js app with Compose
         working-directory: ./03-Docker-Fundamentals/examples/nodejs-app
         run: |

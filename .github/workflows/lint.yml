@@ -2,19 +2,19 @@ name: Lint and Format Check
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   markdown-lint:
     name: Markdown Linting
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Lint Markdown files
         uses: DavidAnson/markdownlint-cli2-action@v14
         with:
@@ -26,11 +26,11 @@ jobs:
   shell-check:
     name: Shell Script Check
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
         with:
@@ -41,11 +41,11 @@ jobs:
   dockerfile-lint:
     name: Dockerfile Linting
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Lint Dockerfiles
         uses: hadolint/hadolint-action@v3.1.0
         with:
@@ -56,11 +56,11 @@ jobs:
   yaml-lint:
     name: YAML Linting
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Lint YAML files
         uses: ibiqlik/action-yamllint@v3
         with:
