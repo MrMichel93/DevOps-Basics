@@ -212,6 +212,12 @@ rollback() {
     if [ -n "${latest_backup}" ]; then
         log "Restoring from backup: ${latest_backup}"
         
+        # Safety check before deletion
+        if [ -z "${APP_DIR}" ] || [ "${APP_DIR}" = "/" ]; then
+            log_error "APP_DIR is not set properly or is root. Aborting."
+            exit 1
+        fi
+        
         rm -rf "${APP_DIR:?}"/*
         tar -xzf "${BACKUP_DIR}/${latest_backup}" -C "${APP_DIR}"
         
