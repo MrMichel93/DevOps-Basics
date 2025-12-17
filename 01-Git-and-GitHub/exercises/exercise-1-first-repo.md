@@ -140,7 +140,7 @@ git commit -m "Add requirements file"
 
 **12. Create repository on GitHub**
 
-1. Go to https://github.com
+1. Go to <https://github.com>
 2. Click the "+" icon → "New repository"
 3. Repository name: `my-first-git-repo`
 4. Description: "Learning Git and GitHub"
@@ -182,7 +182,9 @@ cat >> README.md << 'EOF'
 ```bash
 python hello.py
 ```
+
 EOF
+
 ```
 
 **15. Test and commit**
@@ -286,6 +288,7 @@ Check that you've completed all steps:
 - [ ] Can view history with `git log`
 
 **Verify on GitHub:**
+
 - [ ] Repository contains all files
 - [ ] Commit history is visible
 - [ ] README displays nicely
@@ -315,6 +318,7 @@ Commit and push it.
 ### Challenge 2: Update Requirements
 
 Add actual Python dependencies:
+
 ```bash
 echo "requests==2.31.0" >> requirements.txt
 git add requirements.txt
@@ -355,13 +359,13 @@ Commit and push. Check the Actions tab on GitHub!
 After completing the exercise, answer these:
 
 1. **What's the difference between staging and committing?**
-   
+
 2. **Why do we push to a remote repository?**
-   
+
 3. **What would happen if you made changes but forgot to commit before pushing?**
-   
+
 4. **How would you check what changed in a file before committing?**
-   
+
 5. **Why is .gitignore important?**
 
 ## 🆘 Troubleshooting
@@ -369,15 +373,17 @@ After completing the exercise, answer these:
 ### Issue: "Permission denied (publickey)"
 
 **Solution:** Use HTTPS instead of SSH:
+
 ```bash
 git remote set-url origin https://github.com/YOUR-USERNAME/my-first-git-repo.git
 ```
 
-Or set up SSH keys: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+Or set up SSH keys: <https://docs.github.com/en/authentication/connecting-to-github-with-ssh>
 
 ### Issue: "Updates were rejected"
 
 **Solution:** Pull first, then push:
+
 ```bash
 git pull origin main
 git push origin main
@@ -386,6 +392,7 @@ git push origin main
 ### Issue: "fatal: not a git repository"
 
 **Solution:** Make sure you're in the right directory:
+
 ```bash
 cd my-first-git-repo
 git status
@@ -394,6 +401,7 @@ git status
 ### Issue: Can't push to GitHub
 
 **Solution:** Check if remote is set correctly:
+
 ```bash
 git remote -v
 # Should show your GitHub repository URL

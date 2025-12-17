@@ -50,9 +50,10 @@ docker compose down
 ## 🌐 Accessing the Application
 
 Once running, visit:
-- **Homepage:** http://localhost:5000
-- **Health Check:** http://localhost:5000/health
-- **Info:** http://localhost:5000/info
+
+- **Homepage:** <http://localhost:5000>
+- **Health Check:** <http://localhost:5000/health>
+- **Info:** <http://localhost:5000/info>
 
 ## 🧪 Testing the API
 
@@ -75,11 +76,13 @@ curl -X POST \
 ### Dockerfile Best Practices Demonstrated
 
 1. **Use official base images**
+
    ```dockerfile
    FROM python:3.11-slim
    ```
 
 2. **Copy requirements first for caching**
+
    ```dockerfile
    COPY requirements.txt .
    RUN pip install --no-cache-dir -r requirements.txt
@@ -87,16 +90,19 @@ curl -X POST \
    ```
 
 3. **Set working directory**
+
    ```dockerfile
    WORKDIR /app
    ```
 
 4. **Expose ports**
+
    ```dockerfile
    EXPOSE 5000
    ```
 
 5. **Use CMD for runtime commands**
+
    ```dockerfile
    CMD ["flask", "run"]
    ```

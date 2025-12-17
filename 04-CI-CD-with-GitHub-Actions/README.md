@@ -3,6 +3,7 @@
 ## 🎯 Learning Objectives
 
 By the end of this module, you will be able to:
+
 - ✅ Understand CI/CD concepts and benefits
 - ✅ Create GitHub Actions workflows
 - ✅ Automate testing and linting
@@ -17,12 +18,14 @@ By the end of this module, you will be able to:
 ### Continuous Integration (CI)
 
 **The Problem:**
+
 - Multiple developers working on same codebase
 - Changes conflict with each other
 - Bugs discovered late in development
 - "Integration hell" before releases
 
 **The Solution:**
+
 - Merge code frequently (multiple times per day)
 - Automated tests run on every commit
 - Catch bugs early
@@ -31,11 +34,13 @@ By the end of this module, you will be able to:
 ### Continuous Delivery/Deployment (CD)
 
 **Continuous Delivery:**
+
 - Code is always in deployable state
 - Manual approval required for production deploy
 - Automated deployment to staging/test environments
 
 **Continuous Deployment:**
+
 - Every passing commit automatically deploys to production
 - No manual intervention
 - Requires high confidence in tests
@@ -43,6 +48,7 @@ By the end of this module, you will be able to:
 ### Why CI/CD Matters
 
 **Before CI/CD:**
+
 ```
 Write Code → Wait Days → Manual Testing → Find Bugs → 
 Wait for Fix → Manual Deployment → More Bugs → Manual Hotfix
@@ -50,6 +56,7 @@ Wait for Fix → Manual Deployment → More Bugs → Manual Hotfix
 ```
 
 **With CI/CD:**
+
 ```
 Write Code → Auto Test (5 min) → Auto Deploy to Staging → 
 Review → Auto Deploy to Production
@@ -57,6 +64,7 @@ Review → Auto Deploy to Production
 ```
 
 **Benefits:**
+
 - 🚀 Faster time to market
 - 🐛 Catch bugs earlier (cheaper to fix)
 - 🔄 More frequent releases
@@ -91,23 +99,28 @@ Review → Auto Deploy to Production
 ### Key Concepts
 
 **Workflow:**
+
 - Automated process defined in YAML
 - Triggered by events (push, pull request, schedule, etc.)
 - Located in `.github/workflows/`
 
 **Job:**
+
 - Set of steps that run on same runner
 - Multiple jobs run in parallel (by default)
 
 **Step:**
+
 - Individual task in a job
 - Runs a command or action
 
 **Action:**
+
 - Reusable unit of code
 - Can use actions from marketplace
 
 **Runner:**
+
 - Server that runs your workflows
 - GitHub-hosted or self-hosted
 
@@ -130,28 +143,36 @@ jobs:                             # Jobs
 ## 📖 Module Structure
 
 ### 1. [GitHub Actions Basics](./01-github-actions-basics.md)
+
 Learn workflow syntax and fundamentals.
+
 - Workflow structure
 - Triggers and events
 - Jobs and steps
 - Using actions from marketplace
 
 ### 2. [Testing Automation](./02-testing-automation.md)
+
 Automate tests on every commit.
+
 - Unit tests
 - Integration tests
 - Linting
 - Code coverage
 
 ### 3. [Docker Builds](./03-docker-builds.md)
+
 Build and test Docker images automatically.
+
 - Building images in CI
 - Multi-platform builds
 - Pushing to registries
 - Scanning for vulnerabilities
 
 ### 4. [Deployment Strategies](./04-deployment-strategies.md)
+
 Deploy applications safely.
+
 - Deployment environments
 - Blue-green deployments
 - Canary releases
@@ -162,15 +183,19 @@ Deploy applications safely.
 We provide complete, working workflows:
 
 ### [Test Workflow](./.github/workflows/test.yml)
+
 Runs tests on every push and pull request.
 
 ### [Lint Workflow](./.github/workflows/lint.yml)
+
 Checks code quality and style.
 
 ### [Docker Build Workflow](./.github/workflows/docker-build.yml)
+
 Builds and tests Docker images.
 
 ### [Full Pipeline](./.github/workflows/full-pipeline.yml)
+
 Complete CI/CD pipeline with all steps.
 
 ## 🚀 Quick Start
@@ -360,6 +385,7 @@ jobs:
 ### Enable Debug Logging
 
 Add repository secrets:
+
 - `ACTIONS_STEP_DEBUG` = `true`
 - `ACTIONS_RUNNER_DEBUG` = `true`
 
@@ -436,6 +462,7 @@ Add to README:
 ### Notifications
 
 Configure notifications in GitHub settings:
+
 - Settings → Notifications → Actions
 - Choose email, web, or mobile notifications
 

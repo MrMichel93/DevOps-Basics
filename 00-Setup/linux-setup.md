@@ -16,16 +16,19 @@ This guide covers Ubuntu/Debian (apt), Fedora (dnf), and Arch (pacman). Adjust c
 Always start with an updated system:
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
 **Fedora:**
+
 ```bash
 sudo dnf update -y
 ```
 
 **Arch:**
+
 ```bash
 sudo pacman -Syu
 ```
@@ -33,21 +36,25 @@ sudo pacman -Syu
 ### Step 2: Install Git
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt install -y git
 ```
 
 **Fedora:**
+
 ```bash
 sudo dnf install -y git
 ```
 
 **Arch:**
+
 ```bash
 sudo pacman -S git
 ```
 
 **Configure Git:**
+
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
@@ -61,23 +68,27 @@ git --version
 #### Ubuntu/Debian
 
 1. **Remove old versions (if any)**
+
    ```bash
    sudo apt remove docker docker-engine docker.io containerd runc
    ```
 
 2. **Install prerequisites**
+
    ```bash
    sudo apt update
    sudo apt install -y ca-certificates curl gnupg lsb-release
    ```
 
 3. **Add Docker's official GPG key**
+
    ```bash
    sudo mkdir -p /etc/apt/keyrings
    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
    ```
 
 4. **Set up repository**
+
    ```bash
    echo \
      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
@@ -85,6 +96,7 @@ git --version
    ```
 
 5. **Install Docker Engine**
+
    ```bash
    sudo apt update
    sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
@@ -111,22 +123,26 @@ sudo systemctl enable docker
 #### Post-Installation Steps (All Distributions)
 
 1. **Add your user to docker group**
+
    ```bash
    sudo usermod -aG docker $USER
    ```
 
 2. **Log out and back in** (or run):
+
    ```bash
    newgrp docker
    ```
 
 3. **Verify installation**
+
    ```bash
    docker --version
    docker run hello-world
    ```
 
 **Expected output:**
+
 ```
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -137,6 +153,7 @@ This message shows that your installation appears to be working correctly.
 #### Method 1: Official Package (Recommended)
 
 **Ubuntu/Debian:**
+
 ```bash
 # Import Microsoft GPG key
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -151,6 +168,7 @@ sudo apt install -y code
 ```
 
 **Fedora:**
+
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
@@ -159,6 +177,7 @@ sudo dnf install -y code
 ```
 
 **Arch:**
+
 ```bash
 # VS Code is in AUR
 yay -S visual-studio-code-bin
@@ -173,6 +192,7 @@ sudo snap install --classic code
 ```
 
 **Verify:**
+
 ```bash
 code --version
 ```
@@ -180,6 +200,7 @@ code --version
 ### Step 5: Install Additional Tools
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt install -y \
   curl \
@@ -193,6 +214,7 @@ sudo apt install -y \
 ```
 
 **Fedora:**
+
 ```bash
 sudo dnf install -y \
   curl \
@@ -206,6 +228,7 @@ sudo dnf install -y \
 ```
 
 **Arch:**
+
 ```bash
 sudo pacman -S \
   curl \
@@ -302,6 +325,7 @@ alias reload='source ~/.bashrc'
 ```
 
 **Apply changes:**
+
 ```bash
 source ~/.bashrc
 ```
@@ -354,6 +378,7 @@ code --install-extension yzhang.markdown-all-in-one
 ### Issue: "Permission denied" when running Docker
 
 **Solution:**
+
 ```bash
 # Ensure you're in docker group
 sudo usermod -aG docker $USER
@@ -368,6 +393,7 @@ sudo chmod 666 /var/run/docker.sock
 ### Issue: Docker daemon won't start
 
 **Solutions:**
+
 ```bash
 # Check Docker status
 sudo systemctl status docker
@@ -385,6 +411,7 @@ sudo netstat -tulpn | grep docker
 ### Issue: "Cannot connect to Docker daemon"
 
 **Solution:**
+
 ```bash
 # Start Docker service
 sudo systemctl start docker
@@ -399,6 +426,7 @@ sudo systemctl is-active docker
 ### Issue: VS Code won't start
 
 **Solutions:**
+
 ```bash
 # If installed via snap, check permissions
 snap connections code
@@ -414,6 +442,7 @@ sudo apt install code
 ### Issue: Git credentials not being saved
 
 **Solution:**
+
 ```bash
 # Install credential helper
 sudo apt install -y libsecret-1-0 libsecret-1-dev  # Ubuntu/Debian
@@ -430,13 +459,16 @@ git config --global credential.helper 'cache --timeout=3600'
 ## 🚀 Performance Tips
 
 ### 1. Enable Docker Buildkit
+
 Add to `~/.bashrc`:
+
 ```bash
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 ```
 
 ### 2. Clean Up Regularly
+
 ```bash
 # Remove unused containers, images, volumes
 docker system prune -af
@@ -446,6 +478,7 @@ docker system df
 ```
 
 ### 3. Limit Journal Size
+
 ```bash
 # Edit journald config
 sudo nano /etc/systemd/journald.conf
@@ -458,6 +491,7 @@ sudo systemctl restart systemd-journald
 ```
 
 ### 4. Use Faster DNS
+
 ```bash
 # Edit resolv.conf
 sudo nano /etc/resolv.conf
@@ -502,6 +536,7 @@ tmux attach            # Reattach to session
 ### 3. File Manager Integrations
 
 **Open Terminal here:**
+
 ```bash
 # Ubuntu/Debian (Nautilus)
 sudo apt install nautilus-extension-gnome-terminal
@@ -510,6 +545,7 @@ sudo apt install nautilus-extension-gnome-terminal
 ```
 
 **Open VS Code here:**
+
 - Right-click in file manager → "Open in VS Code"
 - Already works if VS Code is properly installed
 
@@ -531,11 +567,13 @@ xclip -selection clipboard -o
 1. ✅ Verify all tools are working with the verification checklist above
 2. 📝 Complete the [main setup verification](./README.md#verification-checklist)
 3. 🐳 Test Docker with a simple example:
+
    ```bash
    docker run -d -p 8080:80 nginx
    curl http://localhost:8080
    docker stop $(docker ps -q)
    ```
+
 4. 🎓 Proceed to [Module 01: Git and GitHub](../01-Git-and-GitHub/)
 
 ## 📚 Additional Resources

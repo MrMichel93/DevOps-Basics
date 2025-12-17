@@ -16,11 +16,13 @@
 ### The Cost of Security Breaches
 
 **Real Examples:**
+
 - **Equifax (2017):** 147 million records stolen. Cost: $1.4 billion
 - **Target (2013):** 40 million credit cards compromised. Cost: $292 million
 - **Capital One (2019):** 100 million customers affected. Cost: $80 million
 
 **Common Causes:**
+
 - ❌ Hardcoded credentials in code
 - ❌ Unpatched dependencies
 - ❌ Misconfigured containers
@@ -34,12 +36,14 @@
 ### Shift Left Security
 
 **Traditional:**
+
 ```
 Develop → Test → Security Review → Deploy
                    ↑ Found issues here (expensive to fix)
 ```
 
 **DevSecOps:**
+
 ```
 Security → Develop → Security → Test → Security → Deploy
 ↑ Build security in from the start (cheaper to fix)
@@ -48,6 +52,7 @@ Security → Develop → Security → Test → Security → Deploy
 ### Defense in Depth
 
 Multiple layers of security:
+
 1. **Code Level:** Secure coding practices
 2. **Dependencies:** Scan for vulnerabilities
 3. **Containers:** Minimal, hardened images
@@ -60,6 +65,7 @@ Multiple layers of security:
 ### The Problem
 
 **❌ NEVER do this:**
+
 ```javascript
 // Hardcoded secret (BAD!)
 const API_KEY = "sk_live_51HKj2KLm3N4O5P6Q7R8S9T";
@@ -67,6 +73,7 @@ const DB_PASSWORD = "SuperSecret123!";
 ```
 
 **Why it's dangerous:**
+
 - Committed to Git (can't be removed from history)
 - Visible to anyone with repo access
 - Exposed in Docker images
@@ -75,6 +82,7 @@ const DB_PASSWORD = "SuperSecret123!";
 ### The Solution
 
 **✅ Use environment variables:**
+
 ```javascript
 // Good!
 const API_KEY = process.env.API_KEY;
@@ -88,6 +96,7 @@ if (!API_KEY || !DB_PASSWORD) {
 **Where to store secrets:**
 
 **1. Local Development (.env file)**
+
 ```bash
 # .env
 API_KEY=sk_test_abc123
@@ -98,6 +107,7 @@ echo ".env" >> .gitignore
 ```
 
 **2. GitHub Actions (Repository Secrets)**
+
 ```yaml
 jobs:
   deploy:
@@ -109,6 +119,7 @@ jobs:
 ```
 
 **3. Production (Environment Variables)**
+
 ```bash
 docker run -e API_KEY="$API_KEY" myapp
 ```
@@ -128,6 +139,7 @@ DB_PORT=5432
 ### 1. Don't Run as Root
 
 **❌ Bad (default):**
+
 ```dockerfile
 FROM node:18
 COPY . /app
@@ -137,6 +149,7 @@ CMD ["node", "server.js"]
 ```
 
 **✅ Good:**
+
 ```dockerfile
 FROM node:18
 RUN addgroup -g 1001 -S nodejs && \
@@ -203,11 +216,13 @@ CMD ["node", "dist/server.js"]
 ### GitHub Dependabot
 
 **Enable Dependabot:**
+
 1. Repository Settings → Security → Dependabot
 2. Enable "Dependabot alerts"
 3. Enable "Dependabot security updates"
 
 **What it does:**
+
 - Scans dependencies for known vulnerabilities
 - Creates PRs to update vulnerable packages
 - Keeps dependencies up-to-date
@@ -363,6 +378,7 @@ jobs:
 ## 🚀 Examples
 
 See [examples/](./examples/) for:
+
 - `.env.example` template
 - Secure Dockerfile
 - Security scanning workflow

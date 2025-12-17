@@ -17,6 +17,7 @@ WSL2 is required for Docker Desktop and provides a better development experience
    - Select "Windows PowerShell (Admin)" or "Terminal (Admin)"
 
 2. **Enable WSL and Virtual Machine Platform**
+
    ```powershell
    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
@@ -25,6 +26,7 @@ WSL2 is required for Docker Desktop and provides a better development experience
 3. **Restart your computer**
 
 4. **Set WSL2 as default version**
+
    ```powershell
    wsl --set-default-version 2
    ```
@@ -36,6 +38,7 @@ WSL2 is required for Docker Desktop and provides a better development experience
    - Launch Ubuntu and create a username/password
 
 **Verify WSL2 is working:**
+
 ```powershell
 wsl --list --verbose
 # Should show Ubuntu with VERSION 2
@@ -44,7 +47,7 @@ wsl --list --verbose
 ### Step 2: Install Git
 
 1. **Download Git for Windows**
-   - Visit: https://git-scm.com/download/win
+   - Visit: <https://git-scm.com/download/win>
    - Download the 64-bit installer
 
 2. **Run the installer**
@@ -54,6 +57,7 @@ wsl --list --verbose
      - **Line ending conversions**: Choose "Checkout Windows-style, commit Unix-style line endings"
 
 3. **Configure Git**
+
    ```bash
    git config --global user.name "Your Name"
    git config --global user.email "your.email@example.com"
@@ -61,6 +65,7 @@ wsl --list --verbose
    ```
 
 4. **Verify installation**
+
    ```bash
    git --version
    # Should output: git version 2.x.x
@@ -69,7 +74,7 @@ wsl --list --verbose
 ### Step 3: Install Docker Desktop
 
 1. **Download Docker Desktop for Windows**
-   - Visit: https://www.docker.com/products/docker-desktop
+   - Visit: <https://www.docker.com/products/docker-desktop>
    - Click "Download for Windows"
 
 2. **Run the installer**
@@ -87,12 +92,14 @@ wsl --list --verbose
    - Enable integration with your Ubuntu distribution
 
 5. **Verify installation**
+
    ```bash
    docker --version
    docker run hello-world
    ```
 
 **Expected output:**
+
 ```
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -101,7 +108,7 @@ This message shows that your installation appears to be working correctly.
 ### Step 4: Install VS Code
 
 1. **Download VS Code**
-   - Visit: https://code.visualstudio.com/
+   - Visit: <https://code.visualstudio.com/>
    - Click "Download for Windows"
 
 2. **Run the installer**
@@ -115,6 +122,7 @@ This message shows that your installation appears to be working correctly.
    - Install "Remote - WSL" by Microsoft
 
 4. **Verify installation**
+
    ```bash
    code --version
    ```
@@ -127,6 +135,7 @@ This message shows that your installation appears to be working correctly.
    - Click "Get"
 
 2. **Or use winget (if available)**
+
    ```powershell
    winget install Microsoft.WindowsTerminal
    ```
@@ -142,17 +151,20 @@ This message shows that your installation appears to be working correctly.
 You have two options for where to work:
 
 #### Option A: PowerShell/CMD (Windows-native)
+
 - Use PowerShell or Command Prompt
 - Files stored in Windows filesystem (C:\Users\YourName\)
 - Good for: Windows-specific development
 
 #### Option B: WSL Ubuntu (Recommended for DevOps)
+
 - Use Ubuntu terminal via WSL
 - Files stored in Linux filesystem
 - Better performance with Docker
 - More similar to production environments
 
 **To open VS Code in WSL:**
+
 ```bash
 # From Ubuntu terminal
 cd ~
@@ -183,6 +195,7 @@ wsl --list --verbose
 ## 🎨 Recommended Configuration
 
 ### Git Config for Windows
+
 ```bash
 # Better handling of line endings
 git config --global core.autocrlf true
@@ -196,6 +209,7 @@ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 ```
 
 ### Useful PowerShell Aliases
+
 Add to your PowerShell profile (`$PROFILE`):
 
 ```powershell
@@ -215,6 +229,7 @@ Set-Alias -Name dc -Value docker-clean
 ```
 
 ### WSL Performance Optimization
+
 Add to `~/.bashrc` in Ubuntu:
 
 ```bash
@@ -232,37 +247,49 @@ alias la='ls -A'
 ## 🐛 Common Windows Issues
 
 ### Issue: "WSL 2 requires an update to its kernel component"
+
 **Solution:**
-1. Download the WSL2 kernel update: https://aka.ms/wsl2kernel
+
+1. Download the WSL2 kernel update: <https://aka.ms/wsl2kernel>
 2. Install the update
 3. Restart Docker Desktop
 
 ### Issue: Docker Desktop won't start
+
 **Solutions:**
+
 1. Ensure virtualization is enabled in BIOS
 2. Check Windows Features:
+
    ```powershell
    # Run as Administrator
    Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
    Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
    ```
+
 3. Both should show "State: Enabled"
 
 ### Issue: Slow Docker performance
+
 **Solutions:**
+
 - Store project files in WSL filesystem (not `/mnt/c/`)
 - Increase resources in Docker Desktop settings
 - Disable antivirus scanning of WSL filesystem
 
 ### Issue: "Permission denied" when accessing Docker from WSL
+
 **Solution:**
+
 ```bash
 # Ensure Docker Desktop has WSL integration enabled
 # Settings → Resources → WSL Integration → Enable for Ubuntu
 ```
 
 ### Issue: Git showing all files as modified (line endings)
+
 **Solution:**
+
 ```bash
 git config --global core.autocrlf true
 git rm --cached -r .

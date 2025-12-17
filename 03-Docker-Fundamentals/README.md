@@ -3,6 +3,7 @@
 ## 🎯 Learning Objectives
 
 By the end of this module, you will be able to:
+
 - ✅ Understand containerization and why it matters
 - ✅ Build Docker images with Dockerfiles
 - ✅ Run and manage containers
@@ -19,12 +20,14 @@ By the end of this module, you will be able to:
 **"It works on my machine"** - The eternal curse of software development.
 
 **Before Docker:**
+
 - Developer: "Works perfectly on my laptop"
 - QA: "Can't reproduce the bug on my test environment"
 - Production: "Application crashes on startup"
 - DevOps: "Spent 3 days setting up the server"
 
 **After Docker:**
+
 - Package application with ALL dependencies
 - Run identically on any machine
 - Deploy in seconds, not hours
@@ -33,18 +36,21 @@ By the end of this module, you will be able to:
 ### Real-World Benefits
 
 **For Developers:**
+
 - 🚀 Quick setup - `docker compose up` and you're running
 - 🔧 No dependency conflicts - each project in its own container
 - 🧪 Test in production-like environment locally
 - 🤝 Same environment for entire team
 
 **For Operations:**
+
 - 📦 Consistent deployments across all environments
 - ⚡ Fast startup times (seconds, not minutes)
 - 🔄 Easy rollbacks - just run previous image
 - 💰 Better resource utilization than VMs
 
 **For Organizations:**
+
 - 🏃 Faster time to market
 - 🐛 Fewer environment-related bugs
 - 💵 Lower infrastructure costs
@@ -55,6 +61,7 @@ By the end of this module, you will be able to:
 ### Containers vs Virtual Machines
 
 **Virtual Machine:**
+
 ```
 ┌─────────────────────────────────┐
 │         Application A           │
@@ -71,6 +78,7 @@ Heavy (GBs), Slow Boot, Full OS
 ```
 
 **Container:**
+
 ```
 ┌─────────────────────────────────┐
 │         Application A           │
@@ -87,23 +95,27 @@ Light (MBs), Fast Boot, Shared OS
 ### Key Concepts
 
 **Image**: A blueprint (like a class in OOP)
+
 - Contains application code
 - Contains dependencies
 - Contains configuration
 - Immutable (doesn't change)
 
 **Container**: A running instance (like an object in OOP)
+
 - Created from an image
 - Isolated process
 - Has its own filesystem
 - Can be started, stopped, deleted
 
 **Dockerfile**: Instructions to build an image
+
 - Text file with commands
 - Defines base image, copies files, installs dependencies
 - Like a recipe
 
 **Docker Compose**: Run multiple containers
+
 - YAML configuration file
 - Defines services, networks, volumes
 - Start entire application stack with one command
@@ -111,28 +123,36 @@ Light (MBs), Fast Boot, Shared OS
 ## 🗺️ Module Structure
 
 ### 1. [Docker Basics](./01-docker-basics.md)
+
 Learn fundamental Docker commands and concepts.
+
 - Installing Docker
 - Images and containers
 - Essential Docker commands
 - Docker Hub
 
 ### 2. [Writing Dockerfiles](./02-dockerfile.md)
+
 Build custom images with best practices.
+
 - Dockerfile syntax
 - Layer caching
 - Multi-stage builds
 - Optimization techniques
 
 ### 3. [Docker Compose](./03-docker-compose.md)
+
 Orchestrate multi-container applications.
+
 - Compose file structure
 - Service definition
 - Environment variables
 - Dependencies between services
 
 ### 4. [Volumes and Networks](./04-volumes-and-networks.md)
+
 Master data persistence and container communication.
+
 - Volume types and usage
 - Named vs anonymous volumes
 - Network drivers
@@ -143,21 +163,27 @@ Master data persistence and container communication.
 We provide complete, working applications:
 
 ### [Simple Python App](./examples/simple-python-app/)
+
 A Flask web application containerized with Docker.
+
 - Dockerfile with best practices
 - Requirements.txt management
 - Port mapping
 - **Start**: `cd examples/simple-python-app && docker build -t python-app . && docker run -p 5000:5000 python-app`
 
 ### [Node.js App](./examples/nodejs-app/)
+
 Express.js server in a container.
+
 - Node-specific optimizations
 - Development vs production builds
 - Environment variables
 - **Start**: `cd examples/nodejs-app && docker build -t nodejs-app . && docker run -p 3000:3000 nodejs-app`
 
 ### [Full-Stack Application](./examples/full-stack-app/)
+
 Complete application with frontend, backend, and database.
+
 - React frontend
 - Node.js API backend
 - PostgreSQL database
@@ -165,7 +191,9 @@ Complete application with frontend, backend, and database.
 - **Start**: `cd examples/full-stack-app && docker compose up`
 
 ### [Nginx Reverse Proxy](./examples/nginx-reverse-proxy/)
+
 Load balancer with multiple backend servers.
+
 - Nginx configuration
 - Multiple service instances
 - Health checks
@@ -240,6 +268,7 @@ Write Code → Create Dockerfile → Build Image → Run Container → Test → 
 ## 🎯 Best Practices
 
 ### 1. Use Official Images
+
 ```dockerfile
 # ✅ Good
 FROM node:18-alpine
@@ -249,6 +278,7 @@ FROM random-persons-node-image
 ```
 
 ### 2. Use Specific Tags
+
 ```dockerfile
 # ✅ Good
 FROM python:3.11-slim
@@ -258,6 +288,7 @@ FROM python:latest
 ```
 
 ### 3. Minimize Layers
+
 ```dockerfile
 # ✅ Good - 1 layer
 RUN apt-get update && apt-get install -y \
@@ -272,6 +303,7 @@ RUN apt-get install -y package2
 ```
 
 ### 4. Use .dockerignore
+
 ```
 # .dockerignore
 node_modules
@@ -281,6 +313,7 @@ node_modules
 ```
 
 ### 5. Multi-Stage Builds
+
 ```dockerfile
 # Build stage
 FROM node:18 AS builder
@@ -302,6 +335,7 @@ CMD ["node", "dist/server.js"]
 ### Issue: "Cannot connect to Docker daemon"
 
 **Solution:**
+
 ```bash
 # Ensure Docker Desktop is running
 # On Linux, start Docker service
@@ -311,6 +345,7 @@ sudo systemctl start docker
 ### Issue: Port already in use
 
 **Solution:**
+
 ```bash
 # Find what's using the port
 lsof -i :8080
@@ -325,6 +360,7 @@ docker run -p 8081:80 nginx
 ### Issue: Out of disk space
 
 **Solution:**
+
 ```bash
 # Remove unused images, containers, volumes
 docker system prune -a
@@ -336,6 +372,7 @@ docker system df
 ### Issue: Build is slow
 
 **Solution:**
+
 - Use `.dockerignore` to exclude unnecessary files
 - Order Dockerfile commands (static first, changing last)
 - Use multi-stage builds
@@ -377,24 +414,28 @@ docker image prune              # Remove unused images
 ## 🎓 Learning Path
 
 **Week 1: Basics**
+
 - Install Docker
 - Run existing images
 - Basic commands
 - Complete [Docker Basics](./01-docker-basics.md)
 
 **Week 2: Building Images**
+
 - Write Dockerfiles
 - Build custom images
 - Understand layers
 - Complete [Dockerfile guide](./02-dockerfile.md)
 
 **Week 3: Multi-Container**
+
 - Learn Docker Compose
 - Run multiple services
 - Work with volumes and networks
 - Complete [Compose guide](./03-docker-compose.md)
 
 **Week 4: Real Applications**
+
 - Containerize existing apps
 - Work through all [examples](./examples/)
 - Build your own Docker setup

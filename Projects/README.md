@@ -9,11 +9,13 @@ These hands-on projects integrate everything you've learned. Each project builds
 ## 📋 Projects
 
 ### [Project 1: Containerize an Existing App](./01-containerize-existing-app.md)
+
 **Time:** 4-6 hours  
 **Prerequisites:** Modules 00-03  
 **Skills:** Docker, Dockerfile best practices, docker-compose
 
 Take a simple web application and containerize it properly:
+
 - Write optimized Dockerfile
 - Create docker-compose setup
 - Implement health checks
@@ -22,11 +24,13 @@ Take a simple web application and containerize it properly:
 **Outcome:** Fully containerized application ready for deployment.
 
 ### [Project 2: Full-Stack with Docker Compose](./02-full-stack-with-compose.md)
+
 **Time:** 6-8 hours  
 **Prerequisites:** Modules 00-03  
 **Skills:** Multi-container apps, networking, volumes, environment management
 
 Build a complete three-tier application:
+
 - React frontend
 - Node.js/Express backend API
 - PostgreSQL database
@@ -36,11 +40,13 @@ Build a complete three-tier application:
 **Outcome:** Production-like multi-container application with proper networking and data persistence.
 
 ### [Project 3: Complete CI/CD Pipeline](./03-ci-cd-pipeline.md)
+
 **Time:** 6-8 hours  
 **Prerequisites:** Modules 00-04  
 **Skills:** GitHub Actions, automated testing, Docker builds, deployment automation
 
 Implement comprehensive CI/CD:
+
 - Automated testing on every commit
 - Linting and code quality checks
 - Docker image builds
@@ -50,11 +56,13 @@ Implement comprehensive CI/CD:
 **Outcome:** Fully automated deployment pipeline with quality gates.
 
 ### [Project 4: Capstone Project](./04-capstone-project.md)
+
 **Time:** 12-16 hours  
 **Prerequisites:** All modules  
 **Skills:** Everything learned in the course
 
 Build a production-ready application from scratch:
+
 - Choose your own application (provided suggestions)
 - Complete DevOps workflow:
   - Version control with Git
@@ -69,6 +77,7 @@ Build a production-ready application from scratch:
 ## 🏆 Success Criteria
 
 Each project includes:
+
 - ✅ Clear requirements and acceptance criteria
 - ✅ Step-by-step guidance
 - ✅ Common pitfalls and solutions

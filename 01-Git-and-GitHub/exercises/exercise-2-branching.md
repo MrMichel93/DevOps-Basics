@@ -157,10 +157,12 @@ result = subtract(10, 5)   # 5
 result = multiply(10, 5)   # 50
 result = divide(10, 5)     # 2.0
 ```
+
 EOF
 
 git add USAGE.md
 git commit -m "docs: Add usage guide"
+
 ```
 
 **9. Update README**
@@ -305,6 +307,7 @@ cat README.md
 ```
 
 You'll see something like:
+
 ```
 <<<<<<< HEAD
 This project demonstrates Git branching workflows.
@@ -507,6 +510,7 @@ git pull
 ### Issue: Can't switch branches - uncommitted changes
 
 **Solution:** Either commit or stash:
+
 ```bash
 # Option 1: Commit
 git add .
@@ -521,6 +525,7 @@ git checkout other-branch
 ### Issue: Merge conflict is too complex
 
 **Solution:** Abort and try again:
+
 ```bash
 git merge --abort
 # Review changes more carefully
@@ -530,6 +535,7 @@ git merge --abort
 ### Issue: Deleted branch by mistake
 
 **Solution:** Recover from reflog:
+
 ```bash
 git reflog
 # Find the commit where branch was

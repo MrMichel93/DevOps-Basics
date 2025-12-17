@@ -3,6 +3,7 @@
 ## 🎯 Learning Objectives
 
 By the end of this module, you will have:
+
 - ✅ Git installed and configured
 - ✅ Docker Desktop running on your machine
 - ✅ VS Code set up with useful extensions
@@ -23,12 +24,14 @@ Having the right tools properly configured is essential for a smooth learning ex
 ## 🖥️ System Requirements
 
 **Minimum Requirements:**
+
 - **OS**: Windows 10/11, macOS 10.15+, or modern Linux distribution
 - **RAM**: 8GB (16GB recommended for Docker)
 - **Disk**: 20GB free space
 - **CPU**: 64-bit processor with virtualization support
 
 **Check Your System:**
+
 ```bash
 # On macOS/Linux
 uname -m  # Should show x86_64 or arm64
@@ -42,20 +45,25 @@ systeminfo | findstr /C:"System Type"  # Should show x64-based PC
 Choose your operating system and follow the detailed guide:
 
 ### 📘 [Windows Setup Guide](./windows-setup.md)
+
 Complete setup instructions for Windows 10/11 including WSL2 configuration.
 
 ### 📗 [macOS Setup Guide](./mac-setup.md)
+
 Setup guide for Intel and Apple Silicon Macs.
 
 ### 📕 [Linux Setup Guide](./linux-setup.md)
+
 Instructions for Ubuntu, Debian, Fedora, and other distributions.
 
 ## 🔧 What You'll Install
 
 ### 1. Git (Version Control)
+
 Git tracks changes to your code and enables collaboration with others.
 
-**What it does**: 
+**What it does**:
+
 - Saves snapshots of your code (commits)
 - Lets you work on features without breaking the main code (branches)
 - Enables team collaboration (merge, pull requests)
@@ -63,9 +71,11 @@ Git tracks changes to your code and enables collaboration with others.
 **Why it matters**: Every professional software team uses Git. It's not optional.
 
 ### 2. Docker Desktop (Containerization)
+
 Docker packages applications with all their dependencies so they run identically everywhere.
 
 **What it does**:
+
 - Eliminates "works on my machine" problems
 - Provides isolated environments for applications
 - Makes it easy to run databases, services, and tools locally
@@ -73,9 +83,11 @@ Docker packages applications with all their dependencies so they run identically
 **Why it matters**: Containers are the foundation of modern application deployment.
 
 ### 3. VS Code (Code Editor)
+
 A free, extensible code editor with excellent Git and Docker integration.
 
 **What it does**:
+
 - Edit code with syntax highlighting and autocompletion
 - Integrated terminal for running commands
 - Extensions for any language or framework
@@ -83,9 +95,11 @@ A free, extensible code editor with excellent Git and Docker integration.
 **Why it matters**: Industry-standard editor with great DevOps tooling support.
 
 ### 4. Terminal Configuration
+
 A well-configured terminal makes command-line work enjoyable.
 
 **What we'll set up**:
+
 - Readable color scheme
 - Useful aliases and shortcuts
 - Proper PATH configuration
@@ -97,6 +111,7 @@ A well-configured terminal makes command-line work enjoyable.
 After following your OS-specific guide, verify everything works:
 
 ### Git Verification
+
 ```bash
 git --version
 # Expected: git version 2.30.0 or higher
@@ -107,6 +122,7 @@ git config --global user.email
 ```
 
 ### Docker Verification
+
 ```bash
 docker --version
 # Expected: Docker version 20.10.0 or higher
@@ -116,6 +132,7 @@ docker run hello-world
 ```
 
 ### VS Code Verification
+
 ```bash
 code --version
 # Expected: Version number displayed
@@ -125,6 +142,7 @@ code .
 ```
 
 ### Terminal Verification
+
 ```bash
 # Can you see colors in output?
 ls --color=auto  # Linux/macOS
@@ -141,6 +159,7 @@ echo "test" | xclip -selection clipboard  # Linux (may need to install xclip)
 Install these extensions for the best DevOps experience:
 
 ### Essential Extensions
+
 ```
 1. Docker (ms-azuretools.vscode-docker)
    - Manage containers, images, and Dockerfiles
@@ -158,12 +177,14 @@ Install these extensions for the best DevOps experience:
    - Edit documentation
 ```
 
-### Install from VS Code:
+### Install from VS Code
+
 1. Press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS)
 2. Search for extension name
 3. Click "Install"
 
 Or use the command line:
+
 ```bash
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension eamodio.gitlens
@@ -175,6 +196,7 @@ code --install-extension yzhang.markdown-all-in-one
 ## 🎨 Terminal Customization (Optional but Recommended)
 
 ### For macOS/Linux: Oh My Zsh
+
 ```bash
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -183,6 +205,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ### For Windows: Windows Terminal
+
 ```powershell
 # Install from Microsoft Store (free)
 # Search for "Windows Terminal"
@@ -194,21 +217,28 @@ winget install Microsoft.WindowsTerminal
 ## 🐛 Common Issues and Solutions
 
 ### Issue: "Docker daemon not running"
+
 **Solution**: Start Docker Desktop application. Wait for it to fully start (whale icon in system tray should be steady, not animated).
 
 ### Issue: "git: command not found"
-**Solution**: 
+
+**Solution**:
+
 - Windows: Reinstall Git and ensure "Git from command line" option is selected
 - macOS: Install Xcode Command Line Tools: `xcode-select --install`
 - Linux: Install git package: `sudo apt install git` or `sudo yum install git`
 
 ### Issue: "Permission denied" when running Docker
+
 **Solution**:
+
 - Windows/macOS: Ensure Docker Desktop is running
 - Linux: Add user to docker group: `sudo usermod -aG docker $USER`, then log out and back in
 
 ### Issue: VS Code "code" command not working
+
 **Solution**:
+
 - Open VS Code
 - Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux)
 - Type "shell command" and select "Install 'code' command in PATH"

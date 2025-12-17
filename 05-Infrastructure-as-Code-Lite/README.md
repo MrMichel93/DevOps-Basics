@@ -15,6 +15,7 @@
 ### The Traditional Way (Bad)
 
 **Manual Infrastructure:**
+
 1. SSH into server
 2. Install packages manually
 3. Edit configuration files
@@ -23,6 +24,7 @@
 6. Repeat on next server...
 
 **Problems:**
+
 - ❌ Not reproducible
 - ❌ Prone to errors
 - ❌ No version control
@@ -32,6 +34,7 @@
 ### The IaC Way (Good)
 
 **Declarative Infrastructure:**
+
 ```yaml
 # docker-compose.yml
 services:
@@ -48,6 +51,7 @@ services:
 Run: `docker compose up`
 
 **Benefits:**
+
 - ✅ Reproducible
 - ✅ Version controlled
 - ✅ Self-documenting
@@ -120,26 +124,27 @@ Makefiles provide consistent commands:
 .PHONY: build test deploy clean
 
 build:
-	docker compose build
+ docker compose build
 
 test:
-	docker compose run --rm api npm test
+ docker compose run --rm api npm test
 
 deploy:
-	docker compose up -d
+ docker compose up -d
 
 clean:
-	docker compose down -v
-	docker system prune -f
+ docker compose down -v
+ docker system prune -f
 
 dev:
-	docker compose -f docker-compose.dev.yml up
+ docker compose -f docker-compose.dev.yml up
 
 prod:
-	docker compose -f docker-compose.prod.yml up -d
+ docker compose -f docker-compose.prod.yml up -d
 ```
 
 Usage:
+
 ```bash
 make build
 make test
@@ -310,6 +315,7 @@ services:
 ## 🚀 Practical Examples
 
 See [examples/](./examples/) for:
+
 - Complete Makefile with common tasks
 - Development vs Production compose files
 - Multi-service application setup

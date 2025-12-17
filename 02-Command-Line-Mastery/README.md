@@ -3,6 +3,7 @@
 ## 🎯 Learning Objectives
 
 By the end of this module, you will be able to:
+
 - ✅ Navigate filesystem efficiently using command line
 - ✅ Manipulate files and directories with confidence
 - ✅ Use pipes and redirection effectively
@@ -17,12 +18,14 @@ By the end of this module, you will be able to:
 ### The Power of the Command Line
 
 **In DevOps, the command line is your primary interface:**
+
 - Servers don't have graphical interfaces
 - Automation requires scriptable commands
 - Remote work happens via SSH and terminal
 - Many DevOps tools are CLI-first (Docker, kubectl, terraform)
 
 **Real scenarios where CLI is essential:**
+
 - 🔥 Production server is down - you SSH in to investigate
 - 🚀 Deploying application - you run deployment scripts
 - 📊 Checking logs - you tail and grep log files
@@ -31,6 +34,7 @@ By the end of this module, you will be able to:
 ### CLI vs GUI
 
 **GUI (Graphical User Interface):**
+
 - ✅ Easy to learn
 - ✅ Visual feedback
 - ❌ Hard to automate
@@ -38,6 +42,7 @@ By the end of this module, you will be able to:
 - ❌ Not available on servers
 
 **CLI (Command Line Interface):**
+
 - ✅ Extremely fast for experts
 - ✅ Easy to automate
 - ✅ Works over SSH
@@ -49,28 +54,36 @@ By the end of this module, you will be able to:
 ## 🗺️ Module Structure
 
 ### 1. [Navigation](./01-navigation.md)
+
 Master filesystem navigation and exploration.
+
 - `cd`, `ls`, `pwd`
 - Find files with `find` and `locate`
 - Directory trees and paths
 - Working efficiently with directories
 
 ### 2. [File Operations](./02-file-operations.md)
+
 Learn to manipulate files and search content.
+
 - View files: `cat`, `less`, `head`, `tail`
 - Search content: `grep`, `sed`, `awk`
 - Pipes and redirection
 - Text processing power tools
 
 ### 3. [Process Management](./03-process-management.md)
+
 Control running processes and system resources.
+
 - View processes: `ps`, `top`, `htop`
 - Kill processes safely
 - Background and foreground jobs
 - System monitoring
 
 ### 4. [Shell Scripting](./04-shell-scripting.md)
+
 Automate tasks with bash scripts.
+
 - Writing your first script
 - Variables and loops
 - Functions and conditionals
@@ -91,6 +104,7 @@ Study these to see professional scripting in action!
 ## 🏋️ Hands-On Exercises
 
 ### [Exercises](./exercises.md)
+
 Progressive exercises to build muscle memory.
 
 ## 🎓 How to Use This Module
@@ -150,6 +164,7 @@ ls -la /home/user
 ```
 
 Options can be:
+
 - Short: `-a`, `-l`, `-h`
 - Combined: `-lah` (same as `-l -a -h`)
 - Long: `--all`, `--help`
@@ -164,6 +179,7 @@ Unix commands follow these principles:
 4. **Silent on success** - No news is good news
 
 **Example:**
+
 ```bash
 # Each command does one thing
 cat file.txt | grep "error" | wc -l
@@ -215,6 +231,7 @@ watch -n 2 'ps aux | grep python'
 You'll be able to:
 
 **Navigate like a pro:**
+
 ```bash
 cd ~/projects/app/src
 ls -la
@@ -222,11 +239,13 @@ find . -name "*.py" | wc -l
 ```
 
 **Process text efficiently:**
+
 ```bash
 cat app.log | grep "ERROR" | sed 's/ERROR/CRITICAL/' | tee errors.txt
 ```
 
 **Manage processes:**
+
 ```bash
 ps aux | grep node
 kill -9 12345
@@ -234,6 +253,7 @@ nohup python app.py &
 ```
 
 **Write automation scripts:**
+
 ```bash
 #!/bin/bash
 for server in web1 web2 web3; do

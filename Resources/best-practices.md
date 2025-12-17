@@ -7,6 +7,7 @@ Industry-standard patterns and practices for modern software delivery.
 Methodology for building modern, scalable applications:
 
 ### 1. Codebase
+
 ✅ One codebase tracked in version control  
 ✅ Multiple deploys from same codebase  
 ❌ Multiple codebases for same app
@@ -14,6 +15,7 @@ Methodology for building modern, scalable applications:
 **Practice:** Use Git, one repo per application.
 
 ### 2. Dependencies
+
 ✅ Explicitly declare all dependencies  
 ✅ Use package managers (npm, pip, Maven)  
 ❌ Rely on system-wide packages
@@ -21,11 +23,13 @@ Methodology for building modern, scalable applications:
 **Practice:** `package.json`, `requirements.txt`, `Gemfile`
 
 ### 3. Config
+
 ✅ Store config in environment variables  
 ✅ Strict separation of config from code  
 ❌ Hardcode config in source files
 
 **Practice:**
+
 ```bash
 # Bad
 const DB_HOST = "prod-db.example.com"
@@ -35,6 +39,7 @@ const DB_HOST = process.env.DB_HOST
 ```
 
 ### 4. Backing Services
+
 ✅ Treat backing services as attached resources  
 ✅ Swappable via config change only  
 ❌ Distinguish between local and third-party services
@@ -42,6 +47,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** Database, cache, queue should be interchangeable.
 
 ### 5. Build, Release, Run
+
 ✅ Strictly separate build and run stages  
 ✅ Releases are immutable  
 ❌ Modify code at runtime
@@ -49,6 +55,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** Build once, deploy many times.
 
 ### 6. Processes
+
 ✅ Execute app as stateless processes  
 ✅ Store state in backing services  
 ❌ Rely on sticky sessions or local storage
@@ -56,6 +63,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** Use Redis, databases for state.
 
 ### 7. Port Binding
+
 ✅ Export services via port binding  
 ✅ Self-contained apps  
 ❌ Rely on runtime injection of webserver
@@ -63,6 +71,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** App includes web server, binds to port.
 
 ### 8. Concurrency
+
 ✅ Scale out via process model  
 ✅ Processes are first-class citizens  
 ❌ Scale up (bigger machines)
@@ -70,6 +79,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** Run multiple container instances.
 
 ### 9. Disposability
+
 ✅ Fast startup and graceful shutdown  
 ✅ Processes are disposable  
 ❌ Long startup times
@@ -77,6 +87,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** Handle SIGTERM, cleanup on exit.
 
 ### 10. Dev/Prod Parity
+
 ✅ Keep development and production similar  
 ✅ Same backing services  
 ❌ Different tools in dev vs prod
@@ -84,6 +95,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** Use Docker for consistency.
 
 ### 11. Logs
+
 ✅ Treat logs as event streams  
 ✅ Write to stdout/stderr  
 ❌ Manage log files locally
@@ -91,6 +103,7 @@ const DB_HOST = process.env.DB_HOST
 **Practice:** Let container orchestrator handle logs.
 
 ### 12. Admin Processes
+
 ✅ Run admin tasks as one-off processes  
 ✅ Use same codebase and environment  
 ❌ SSH in and run commands
@@ -102,6 +115,7 @@ const DB_HOST = process.env.DB_HOST
 ### Image Building
 
 **1. Use Official Base Images**
+
 ```dockerfile
 # ✅ Good
 FROM node:18-alpine
@@ -111,6 +125,7 @@ FROM some-random-node-image
 ```
 
 **2. Use Specific Tags**
+
 ```dockerfile
 # ✅ Good
 FROM python:3.11-slim
@@ -120,6 +135,7 @@ FROM python:latest
 ```
 
 **3. Minimize Layers**
+
 ```dockerfile
 # ✅ Good - 1 layer
 RUN apt-get update && \
@@ -133,6 +149,7 @@ RUN apt-get install -y package2
 ```
 
 **4. Order Instructions by Change Frequency**
+
 ```dockerfile
 # ✅ Good - static first, changes last
 FROM node:18-alpine
@@ -149,6 +166,7 @@ RUN npm install          # Rebuilds every time
 ```
 
 **5. Use Multi-Stage Builds**
+
 ```dockerfile
 # Build stage
 FROM node:18 AS builder
@@ -166,6 +184,7 @@ CMD ["node", "dist/server.js"]
 ```
 
 **6. Use .dockerignore**
+
 ```
 node_modules
 *.log
@@ -174,6 +193,7 @@ node_modules
 ```
 
 **7. Don't Run as Root**
+
 ```dockerfile
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
@@ -183,16 +203,19 @@ USER nodejs
 ### Container Runtime
 
 **1. Limit Resources**
+
 ```bash
 docker run --memory="512m" --cpus="1.0" myapp
 ```
 
 **2. Use Health Checks**
+
 ```dockerfile
 HEALTHCHECK --interval=30s CMD curl -f http://localhost/health || exit 1
 ```
 
 **3. Handle Signals Properly**
+
 ```javascript
 process.on('SIGTERM', () => {
     console.log('SIGTERM received');
@@ -207,6 +230,7 @@ process.on('SIGTERM', () => {
 ### Commit Messages
 
 **Format:**
+
 ```
 <type>: <subject>
 
@@ -216,6 +240,7 @@ process.on('SIGTERM', () => {
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -225,6 +250,7 @@ process.on('SIGTERM', () => {
 - `chore`: Maintenance
 
 **Example:**
+
 ```
 feat: Add user authentication
 
@@ -237,6 +263,7 @@ Closes #123
 ### Branching
 
 **Strategy: GitHub Flow**
+
 1. `main` is always deployable
 2. Create descriptive branches from `main`
 3. Commit often to branch
@@ -245,6 +272,7 @@ Closes #123
 6. Deploy immediately
 
 **Branch Names:**
+
 ```
 feature/user-authentication
 fix/login-button-alignment
@@ -256,11 +284,13 @@ docs/api-documentation
 ### Pipeline Design
 
 **1. Fast Feedback**
+
 - Run fastest tests first
 - Fail fast on critical issues
 - Parallel execution when possible
 
 **2. Consistent Environments**
+
 ```yaml
 # Use same container image everywhere
 jobs:
@@ -271,11 +301,13 @@ jobs:
 ```
 
 **3. Idempotent Builds**
+
 - Same input = same output
 - No side effects
 - Reproducible builds
 
 **4. Secure Secrets**
+
 ```yaml
 # ✅ Good
 env:
@@ -295,16 +327,19 @@ env:
 ```
 
 **Unit Tests (70%):**
+
 - Fast, isolated
 - Test individual functions
 - Run on every commit
 
 **Integration Tests (20%):**
+
 - Test component interactions
 - Use test database
 - Run on every commit
 
 **E2E Tests (10%):**
+
 - Test full workflows
 - Slower, more fragile
 - Run before deployment
@@ -312,18 +347,21 @@ env:
 ## 🔒 Security Best Practices
 
 ### 1. Secrets Management
+
 ✅ Use environment variables  
 ✅ Use secrets managers (GitHub Secrets, Vault)  
 ❌ Commit secrets to repository  
 ❌ Hardcode credentials
 
 ### 2. Dependency Scanning
+
 ✅ Use Dependabot or similar  
 ✅ Regular updates  
 ✅ Monitor for vulnerabilities  
 ❌ Ignore security alerts
 
 ### 3. Image Scanning
+
 ```bash
 # Scan Docker images
 docker scan myapp:latest
@@ -331,12 +369,14 @@ trivy image myapp:latest
 ```
 
 ### 4. Least Privilege
+
 ✅ Run containers as non-root  
 ✅ Minimal base images  
 ✅ Restrict network access  
 ❌ Run everything as root
 
 ### 5. Keep Software Updated
+
 ✅ Automated updates (where safe)  
 ✅ Regular patching  
 ✅ Monitor CVEs  
@@ -347,21 +387,25 @@ trivy image myapp:latest
 ### 1. The Four Golden Signals
 
 **Latency:** How long does it take?
+
 ```
 Response time, request duration
 ```
 
 **Traffic:** How much demand?
+
 ```
 Requests per second, concurrent users
 ```
 
 **Errors:** What's failing?
+
 ```
 Error rate, failed requests
 ```
 
 **Saturation:** How full are resources?
+
 ```
 CPU, memory, disk usage
 ```
@@ -369,6 +413,7 @@ CPU, memory, disk usage
 ### 2. Logging
 
 **Structure:**
+
 ```javascript
 // ✅ Good - structured
 logger.info('User login', { 
@@ -382,6 +427,7 @@ console.log('User 123 logged in from 192.168.1.1');
 ```
 
 **Levels:**
+
 ```
 TRACE - Very detailed
 DEBUG - Diagnostic info
@@ -401,18 +447,21 @@ FATAL - Critical failure
 ## 🎯 Deployment Strategies
 
 ### 1. Blue-Green
+
 Two identical environments. Switch traffic instantly.
 
 **Pros:** Instant rollback, test in production  
 **Cons:** Requires 2x resources
 
 ### 2. Canary
+
 Gradually roll out to subset of users.
 
 **Pros:** Risk mitigation, early detection  
 **Cons:** Complex, requires monitoring
 
 ### 3. Rolling Update
+
 Replace instances one at a time.
 
 **Pros:** No downtime, gradual  
@@ -421,6 +470,7 @@ Replace instances one at a time.
 ## 📋 Documentation Best Practices
 
 ### README Essentials
+
 1. **What** - Brief description
 2. **Why** - Problem it solves
 3. **How** - Installation and usage
@@ -429,6 +479,7 @@ Replace instances one at a time.
 6. **License** - Usage terms
 
 ### Code Comments
+
 ```python
 # ✅ Good - explains WHY
 # We retry 3 times because API is occasionally unreachable
@@ -440,6 +491,7 @@ retry_count = 3
 ```
 
 ### Architecture Diagrams
+
 ✅ Include in documentation  
 ✅ Keep updated  
 ✅ Show data flow  
@@ -448,19 +500,23 @@ retry_count = 3
 ## 🎓 Learning & Improvement
 
 ### 1. Blameless Postmortems
+
 After incidents:
+
 - What happened?
 - Why did it happen?
 - How do we prevent it?
 - What did we learn?
 
 ### 2. Regular Reviews
+
 - Code reviews (always)
 - Architecture reviews (quarterly)
 - Process reviews (quarterly)
 - Tool evaluations (yearly)
 
 ### 3. Measure Everything
+
 ✅ Deployment frequency  
 ✅ Lead time for changes  
 ✅ Time to restore service  

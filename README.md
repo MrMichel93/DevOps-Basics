@@ -10,7 +10,8 @@
 
 DevOps is a set of practices that combines software **Dev**elopment and IT **Op**erations. It aims to shorten the development lifecycle and provide continuous delivery with high software quality. DevOps is complementary with Agile software development; several DevOps aspects came from the Agile methodology.
 
-### Core DevOps Principles:
+### Core DevOps Principles
+
 - **Automation**: Automate repetitive tasks (testing, deployment, infrastructure)
 - **Collaboration**: Break down silos between development and operations teams
 - **Continuous Improvement**: Always iterate and improve processes
@@ -18,6 +19,7 @@ DevOps is a set of practices that combines software **Dev**elopment and IT **Op*
 - **Infrastructure as Code**: Manage infrastructure through code and version control
 
 ### Why Learn DevOps?
+
 - **High Demand**: DevOps engineers are among the highest-paid tech professionals
 - **Modern Development**: These are essential skills for any developer in 2024+
 - **Career Growth**: DevOps skills open doors to senior engineering and architect roles
@@ -32,7 +34,8 @@ This is a **hands-on, practical course** designed to teach you real-world DevOps
 **Skill Level**: Beginner to Intermediate  
 **Cost**: 100% Free
 
-### What You'll Learn:
+### What You'll Learn
+
 ✅ Version control with Git and GitHub collaboration workflows  
 ✅ Command-line proficiency for automation and scripting  
 ✅ Docker for containerization and environment consistency  
@@ -41,7 +44,8 @@ This is a **hands-on, practical course** designed to teach you real-world DevOps
 ✅ Logging, monitoring, and observability basics  
 ✅ Security best practices (DevSecOps)  
 
-### What You Won't Need:
+### What You Won't Need
+
 ❌ AWS, Azure, or GCP accounts (no cloud services required)  
 ❌ Paid tools or subscriptions  
 ❌ High-end computer (Docker Desktop will run on most modern machines)  
@@ -76,29 +80,34 @@ Week 7-8: Production Ready
 ## 📋 Prerequisites
 
 **Required Knowledge:**
+
 - Basic programming skills in any language (Python, JavaScript, Java, etc.)
 - Comfort with using your computer's file system
 - Willingness to use the command line (we'll teach you!)
 
 **Nice to Have (but not required):**
+
 - Basic understanding of web applications
 - Some experience with Git (even just basic add/commit/push)
 
 ## 🚀 Quick Start
 
 1. **Clone this repository**
+
 ```bash
 git clone https://github.com/MrMichel93/DevOps-Basics.git
 cd DevOps-Basics
 ```
 
-2. **Start with Setup**
+1. **Start with Setup**
+
 ```bash
 cd 00-Setup
 # Follow the setup guide for your operating system
 ```
 
-3. **Follow the modules in order**
+1. **Follow the modules in order**
+
 - Each module builds on the previous one
 - Complete exercises before moving forward
 - Don't skip the hands-on practice!
@@ -106,27 +115,35 @@ cd 00-Setup
 ## 📖 Course Modules
 
 ### [00-Setup](./00-Setup/)
+
 Get your development environment ready with Git, Docker Desktop, VS Code, and terminal configuration.
 
 ### [01-Git-and-GitHub](./01-Git-and-GitHub/)
+
 Master version control, branching strategies, collaboration workflows, and GitHub features. Includes practical exercises for forking, pull requests, and code reviews.
 
 ### [02-Command-Line-Mastery](./02-Command-Line-Mastery/)
+
 Become proficient with the command line, learn shell scripting, and automate common tasks. Includes real automation scripts.
 
 ### [03-Docker-Fundamentals](./03-Docker-Fundamentals/)
+
 Learn containerization from basics to multi-container applications. Includes Dockerfile best practices, Docker Compose, and real application examples.
 
 ### [04-CI-CD-with-GitHub-Actions](./04-CI-CD-with-GitHub-Actions/)
+
 Build automated testing and deployment pipelines. Learn GitHub Actions with functional workflows you can use immediately.
 
 ### [05-Infrastructure-as-Code-Lite](./05-Infrastructure-as-Code-Lite/)
+
 Understand IaC concepts using Docker Compose and Makefiles for reproducible environments.
 
 ### [06-Monitoring-and-Logging](./06-Monitoring-and-Logging/)
+
 Implement observability with structured logging, container health checks, and monitoring stacks.
 
 ### [07-Security-Basics](./07-Security-Basics/)
+
 Learn DevSecOps practices: secrets management, container security, and dependency scanning.
 
 ## 🛠️ Projects
@@ -151,23 +168,29 @@ Hands-on projects to integrate your learning:
 DevOps isn't just about tools—it's about **culture and mindset**:
 
 ### **Collaboration Over Silos**
+
 Traditional IT had developers "throwing code over the wall" to operations. DevOps breaks down these barriers. Developers understand operations concerns (uptime, monitoring), and operations teams understand development needs (fast iteration, testing).
 
 ### **Automation Over Manual Work**
+
 If you do it more than twice, automate it. Manual processes are:
+
 - Error-prone
 - Time-consuming
 - Not scalable
 - Difficult to reproduce
 
 ### **Measurement Over Guesswork**
+
 You can't improve what you don't measure. DevOps emphasizes:
+
 - Metrics (response time, error rates, deployment frequency)
 - Logging (what happened and when)
 - Monitoring (is it working right now?)
 - Feedback loops (learn and iterate)
 
 ### **Continuous Everything**
+
 - **Continuous Integration**: Merge code frequently, test automatically
 - **Continuous Delivery**: Always keep code in a deployable state
 - **Continuous Deployment**: Automatically deploy to production
@@ -187,6 +210,7 @@ You can't improve what you don't measure. DevOps emphasizes:
 **5:00 PM** - Review metrics, plan tomorrow's improvements  
 
 **Real Skills You'll Use:**
+
 - Writing automation scripts (40% of time)
 - Troubleshooting issues (30% of time)
 - Code reviews and collaboration (15% of time)
@@ -203,7 +227,7 @@ You can't improve what you don't measure. DevOps emphasizes:
 
 4. **Google is Your Friend**: Professional DevOps engineers Google things constantly. You'll need to as well.
 
-5. **Join Communities**: 
+5. **Join Communities**:
    - [DevOps subreddit](https://reddit.com/r/devops)
    - [Docker Community Forums](https://forums.docker.com/)
    - [GitHub Community](https://github.community/)
@@ -213,12 +237,14 @@ You can't improve what you don't measure. DevOps emphasizes:
 ## 🏆 After This Course
 
 You'll be ready to:
+
 - Work as a Junior DevOps Engineer
 - Implement CI/CD in your development team
 - Containerize and deploy applications
 - Move on to advanced topics (Kubernetes, Cloud Platforms, Advanced Networking)
 
-### Next Steps:
+### Next Steps
+
 1. **Cloud Platforms**: Learn AWS, Azure, or GCP
 2. **Kubernetes**: Container orchestration at scale
 3. **Advanced Monitoring**: Prometheus, Grafana, ELK stack
