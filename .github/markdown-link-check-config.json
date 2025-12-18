@@ -23,6 +23,21 @@
     },
     {
       "pattern": "^https://x.com"
+    },
+    {
+      "pattern": "^https://img.shields.io"
+    },
+    {
+      "pattern": "^https://github.community"
+    },
+    {
+      "pattern": "^\\."
+    },
+    {
+      "pattern": "^[^/]*\\.md$"
+    },
+    {
+      "pattern": "^LICENSE$"
     }
   ],
   "replacementPatterns": [],
