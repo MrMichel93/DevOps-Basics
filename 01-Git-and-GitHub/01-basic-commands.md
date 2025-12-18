@@ -40,16 +40,19 @@ git init
 ```
 
 **Expected output:**
+
 ```
 Initialized empty Git repository in /path/to/my-first-project/.git/
 ```
 
 **What happened:**
+
 - Git created a hidden `.git` directory
 - This directory contains all version control data
 - Your project is now a Git repository!
 
 **When to use:**
+
 - Starting a new project
 - Adding version control to an existing project
 
@@ -62,6 +65,7 @@ git status
 ```
 
 **Example output:**
+
 ```
 On branch main
 
@@ -71,12 +75,14 @@ nothing to commit (create/copy files and use "git add" to track)
 ```
 
 **After creating a file:**
+
 ```bash
 echo "# My Project" > README.md
 git status
 ```
 
 **Output:**
+
 ```
 On branch main
 
@@ -90,6 +96,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 **When to use:**
+
 - Constantly! Use it to see what's changed
 - Before committing to verify what you're committing
 - When you forget what you were doing
@@ -115,11 +122,13 @@ git add src/
 ```
 
 **After adding:**
+
 ```bash
 git status
 ```
 
 **Output:**
+
 ```
 On branch main
 
@@ -131,11 +140,13 @@ Changes to be committed:
 ```
 
 **Why staging exists:**
+
 - You might not want to commit all changes at once
 - Allows you to review changes before committing
 - Enables atomic commits (one logical change per commit)
 
 **Example scenario:**
+
 ```bash
 # You modified 3 files but they're for 2 different features
 # Commit them separately:
@@ -163,6 +174,7 @@ git commit
 ```
 
 **Expected output:**
+
 ```
 [main (root-commit) a1b2c3d] Add README file
  1 file changed, 1 insertion(+)
@@ -170,6 +182,7 @@ git commit
 ```
 
 **Anatomy of a good commit message:**
+
 ```
 Short summary (50 characters or less)
 
@@ -181,6 +194,7 @@ Explain WHAT and WHY, not HOW (code shows how).
 ```
 
 **Good commit messages:**
+
 ```bash
 git commit -m "Fix login button alignment"
 git commit -m "Add user authentication endpoint"
@@ -188,6 +202,7 @@ git commit -m "Update dependencies to fix security vulnerability"
 ```
 
 **Bad commit messages:**
+
 ```bash
 git commit -m "fix stuff"
 git commit -m "changes"
@@ -220,6 +235,7 @@ git log --author="John Doe"
 ```
 
 **Example output:**
+
 ```bash
 git log --oneline
 ```
@@ -229,6 +245,7 @@ a1b2c3d (HEAD -> main) Add README file
 ```
 
 **Understanding the output:**
+
 - `a1b2c3d` - Commit hash (unique identifier)
 - `(HEAD -> main)` - Current branch and position
 - `Add README file` - Commit message
@@ -249,11 +266,13 @@ git clone -b develop https://github.com/username/repository.git
 ```
 
 **What happens:**
+
 1. Downloads entire repository history
 2. Creates a local copy
 3. Sets up remote connection (named "origin")
 
 **Example:**
+
 ```bash
 git clone https://github.com/github/gitignore.git
 cd gitignore
@@ -282,6 +301,7 @@ git remote set-url origin https://github.com/username/new-repo.git
 ```
 
 **Example output:**
+
 ```bash
 git remote -v
 ```
@@ -313,6 +333,7 @@ git push --force
 ```
 
 **First push workflow:**
+
 ```bash
 # Create repository on GitHub first, then:
 git remote add origin https://github.com/username/repository.git
@@ -321,6 +342,7 @@ git push -u origin main
 ```
 
 **Expected output:**
+
 ```
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
@@ -347,10 +369,12 @@ git pull --rebase
 ```
 
 **What happens:**
+
 1. Downloads new commits from remote
 2. Merges them into your current branch
 
 **When to use:**
+
 - Before starting work each day
 - Before pushing your changes
 - When collaborating with others
@@ -361,7 +385,7 @@ Let's create a project from scratch and push it to GitHub:
 
 ### Step 1: Create a New Repository on GitHub
 
-1. Go to https://github.com
+1. Go to <https://github.com>
 2. Click the "+" icon → "New repository"
 3. Name: `my-devops-project`
 4. Description: "Learning DevOps basics"
@@ -501,6 +525,7 @@ git reset --hard HEAD~1
 **Problem:** You forgot to create/modify files before committing.
 
 **Solution:** Create or modify some files first:
+
 ```bash
 echo "content" > file.txt
 git add file.txt
@@ -512,6 +537,7 @@ git commit -m "Add file"
 **Problem:** You're not in a directory with Git initialized.
 
 **Solution:**
+
 ```bash
 # Initialize Git
 git init
@@ -525,6 +551,7 @@ cd path/to/git/repo
 **Problem:** Local and remote repositories have different histories.
 
 **Solution:**
+
 ```bash
 git pull origin main --allow-unrelated-histories
 ```
@@ -536,12 +563,14 @@ git pull origin main --allow-unrelated-histories
 **Solution:** Use Personal Access Token or SSH keys.
 
 **For HTTPS:**
+
 ```bash
 # Use token as password
 # Get token from: https://github.com/settings/tokens
 ```
 
 **For SSH:**
+
 ```bash
 # Generate SSH key
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -614,6 +643,7 @@ Before moving on, make sure you can answer:
 5. What's the difference between `git clone` and `git init`?
 
 **Answers:**
+
 1. `git add` stages changes; `git commit` saves them to history
 2. `git status` and `git diff`
 3. `git log`
@@ -627,6 +657,7 @@ Great work! You now understand Git basics.
 **Next:** Learn about [Branching](./02-branching.md) - Git's killer feature that enables parallel development.
 
 **Practice more:**
+
 - Create several test repositories
 - Practice the daily workflow
 - Try making mistakes and fixing them

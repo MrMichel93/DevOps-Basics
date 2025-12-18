@@ -26,6 +26,7 @@ Imagine writing a book. The `main` branch is your published chapters. When you w
 ## 🤔 Why Use Branches?
 
 ### 1. Isolated Development
+
 Work on features without breaking the main code.
 
 ```bash
@@ -37,6 +38,7 @@ feature-branch: experimental code
 ```
 
 ### 2. Parallel Work
+
 Multiple developers can work simultaneously.
 
 ```
@@ -47,9 +49,11 @@ feature2:                  H---I---J--------/
 ```
 
 ### 3. Safe Experimentation
+
 Try ideas without risk. If it doesn't work, just delete the branch.
 
 ### 4. Code Review
+
 Create branch → Make changes → Submit for review → Merge when approved
 
 This is the workflow at Google, Facebook, Microsoft, and pretty much every tech company.
@@ -73,6 +77,7 @@ git status
 ```
 
 **Example output:**
+
 ```
 $ git branch
 * main
@@ -96,6 +101,7 @@ git switch -c feature-name
 ```
 
 **Example:**
+
 ```bash
 # Create feature branch
 git checkout -b feature-user-auth
@@ -105,6 +111,7 @@ git branch
 ```
 
 **Output:**
+
 ```
 * feature-user-auth
   main
@@ -127,6 +134,7 @@ git checkout -b feature-name
 ```
 
 **Example:**
+
 ```bash
 # Switch to main
 git checkout main
@@ -153,6 +161,7 @@ git push origin --delete branch-name
 ```
 
 **Example:**
+
 ```bash
 # After merging a feature
 git checkout main
@@ -182,6 +191,7 @@ git merge feature-branch
 ```
 
 **Output:**
+
 ```
 Updating a1b2c3d..e4f5g6h
 Fast-forward
@@ -211,6 +221,7 @@ git merge feature-branch
 ```
 
 **Output:**
+
 ```
 Merge made by the 'recursive' strategy.
  file.txt | 5 +++++
@@ -249,6 +260,7 @@ git merge feature-spanish
 ```
 
 **Output:**
+
 ```
 Auto-merging greeting.txt
 CONFLICT (content): Merge conflict in greeting.txt
@@ -264,6 +276,7 @@ cat greeting.txt
 ```
 
 **Shows:**
+
 ```
 <<<<<<< HEAD
 Hello Universe
@@ -273,6 +286,7 @@ Hola Mundo
 ```
 
 **Explanation:**
+
 - `<<<<<<< HEAD` - Current branch (main)
 - `=======` - Separator
 - `>>>>>>> feature-spanish` - Incoming branch
@@ -328,6 +342,7 @@ git mergetool
 ```
 
 **In VS Code:**
+
 1. Open conflicted file
 2. VS Code highlights conflicts
 3. Click "Accept Current Change", "Accept Incoming Change", or "Accept Both Changes"
@@ -341,11 +356,13 @@ Rebase re-applies your commits on top of another branch.
 ### When to Use Rebase
 
 **Use rebase when:**
+
 - ✅ Updating feature branch with latest main
 - ✅ Cleaning up local commits before pushing
 - ✅ Maintaining linear history
 
 **Don't rebase when:**
+
 - ❌ Branch is already pushed and others are using it
 - ❌ On public/shared branches
 - ❌ You're unsure (merge is safer)
@@ -387,11 +404,13 @@ git rebase --abort
 ### Rebase vs Merge
 
 **Merge:**
+
 - ✅ Preserves complete history
 - ✅ Safer for shared branches
 - ❌ Creates merge commits (cluttered history)
 
 **Rebase:**
+
 - ✅ Linear, clean history
 - ✅ Easier to understand
 - ❌ Rewrites history (dangerous on shared branches)
@@ -408,6 +427,7 @@ feature2:                    G------H
 ```
 
 **How it works:**
+
 1. Create branch for each feature
 2. Develop feature independently
 3. Submit pull request
@@ -440,6 +460,7 @@ feature:         H---I
 ```
 
 **Branches:**
+
 - `main` - Production code
 - `develop` - Integration branch
 - `feature/*` - New features
@@ -457,6 +478,7 @@ main:     A---B---C---D---E---F
 ```
 
 **How it works:**
+
 - Main branch is always deployable
 - Small, frequent merges
 - Feature flags for incomplete features
@@ -502,6 +524,7 @@ git stash save "Work in progress on feature X"
 **When to use:** Switch branches without committing incomplete work.
 
 **Example:**
+
 ```bash
 # Working on feature branch
 # Suddenly need to fix bug on main
@@ -556,6 +579,7 @@ git push origin --delete feature-login-page
 ### Issue: "Cannot switch branch - uncommitted changes"
 
 **Solution 1: Commit changes**
+
 ```bash
 git add .
 git commit -m "Work in progress"
@@ -563,6 +587,7 @@ git checkout other-branch
 ```
 
 **Solution 2: Stash changes**
+
 ```bash
 git stash
 git checkout other-branch
@@ -586,6 +611,7 @@ git fetch --prune
 ### Issue: "Can't merge - divergent branches"
 
 **Solution:**
+
 ```bash
 # Option 1: Merge
 git merge origin/main
@@ -652,6 +678,7 @@ Excellent! You now understand Git's most powerful feature.
 **Next:** Learn [Collaboration](./03-collaboration.md) - working with others using GitHub workflows.
 
 **Practice:**
+
 - Create multiple branches in a test repo
 - Intentionally create and resolve conflicts
 - Try different merge strategies

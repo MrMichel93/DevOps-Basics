@@ -47,10 +47,11 @@ docker compose down
 ## 🌐 Accessing the Application
 
 Once running, visit:
-- **Homepage:** http://localhost:3000
-- **Health Check:** http://localhost:3000/health
-- **Info API:** http://localhost:3000/api/info
-- **Users API:** http://localhost:3000/api/users
+
+- **Homepage:** <http://localhost:3000>
+- **Health Check:** <http://localhost:3000/health>
+- **Info API:** <http://localhost:3000/api/info>
+- **Users API:** <http://localhost:3000/api/users>
 
 ## 🧪 Testing the API
 
@@ -85,17 +86,20 @@ This results in a smaller, more secure final image.
 ### Security Best Practices
 
 1. **Non-root user:**
+
    ```dockerfile
    RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
    USER nodejs
    ```
 
 2. **Minimal base image:**
+
    ```dockerfile
    FROM node:18-alpine
    ```
 
 3. **Health check:**
+
    ```dockerfile
    HEALTHCHECK --interval=30s CMD node -e "..."
    ```
@@ -103,6 +107,7 @@ This results in a smaller, more secure final image.
 ### Optimization Techniques
 
 1. **Layer caching:**
+
    ```dockerfile
    COPY package*.json ./
    RUN npm ci
@@ -110,6 +115,7 @@ This results in a smaller, more secure final image.
    ```
 
 2. **Clean npm cache:**
+
    ```dockerfile
    RUN npm ci --only=production && npm cache clean --force
    ```
@@ -152,11 +158,13 @@ docker scout cves nodejs-app
 ## 🏗️ Build Stages Explained
 
 **Stage 1 - Builder:**
+
 - Uses full Node.js image
 - Installs all dependencies (including devDependencies)
 - Builds application if needed
 
 **Stage 2 - Production:**
+
 - Uses minimal alpine image
 - Creates non-root user
 - Copies only production dependencies
@@ -212,22 +220,26 @@ docker system prune -a
 For production, consider:
 
 1. **Use specific image tags:**
+
    ```dockerfile
    FROM node:18.17.0-alpine3.18
    ```
 
 2. **Add logging:**
+
    ```javascript
    const morgan = require('morgan');
    app.use(morgan('combined'));
    ```
 
 3. **Add monitoring:**
+
    ```javascript
    const prometheus = require('prom-client');
    ```
 
 4. **Use secrets for sensitive data:**
+
    ```bash
    docker run --env-file .env nodejs-app
    ```

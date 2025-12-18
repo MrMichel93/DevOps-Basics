@@ -18,6 +18,7 @@ Homebrew makes installing development tools much easier on macOS.
    - Or find it in Applications → Utilities → Terminal
 
 2. **Install Homebrew**
+
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
@@ -28,12 +29,14 @@ Homebrew makes installing development tools much easier on macOS.
 
 4. **Add Homebrew to PATH (Apple Silicon Macs only)**
    If you have an M1/M2/M3 Mac, run:
+
    ```bash
    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
    eval "$(/opt/homebrew/bin/brew shellenv)"
    ```
 
 5. **Verify installation**
+
    ```bash
    brew --version
    # Should output: Homebrew 4.x.x
@@ -44,17 +47,20 @@ Homebrew makes installing development tools much easier on macOS.
 macOS comes with Git, but it's better to install the latest version via Homebrew.
 
 1. **Install Git**
+
    ```bash
    brew install git
    ```
 
 2. **Configure Git**
+
    ```bash
    git config --global user.name "Your Name"
    git config --global user.email "your.email@example.com"
    ```
 
 3. **Verify installation**
+
    ```bash
    git --version
    # Should output: git version 2.x.x
@@ -68,7 +74,7 @@ macOS comes with Git, but it's better to install the latest version via Homebrew
 ### Step 3: Install Docker Desktop
 
 1. **Download Docker Desktop for Mac**
-   - Visit: https://www.docker.com/products/docker-desktop
+   - Visit: <https://www.docker.com/products/docker-desktop>
    - Choose the right version:
      - **Apple Silicon** (M1/M2/M3): "Mac with Apple chip"
      - **Intel**: "Mac with Intel chip"
@@ -93,6 +99,7 @@ macOS comes with Git, but it's better to install the latest version via Homebrew
    - Click "Apply & Restart"
 
 5. **Verify installation**
+
    ```bash
    docker --version
    # Should output: Docker version 20.x.x or higher
@@ -101,6 +108,7 @@ macOS comes with Git, but it's better to install the latest version via Homebrew
    ```
 
 **Expected output:**
+
 ```
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -109,12 +117,13 @@ This message shows that your installation appears to be working correctly.
 ### Step 4: Install VS Code
 
 1. **Install via Homebrew**
+
    ```bash
    brew install --cask visual-studio-code
    ```
 
    **Or download manually:**
-   - Visit: https://code.visualstudio.com/
+   - Visit: <https://code.visualstudio.com/>
    - Download for macOS
    - Move to Applications folder
 
@@ -125,6 +134,7 @@ This message shows that your installation appears to be working correctly.
    - Select "Shell Command: Install 'code' command in PATH"
 
 3. **Verify installation**
+
    ```bash
    code --version
    # Should output version number
@@ -136,6 +146,7 @@ This message shows that your installation appears to be working correctly.
 ### Step 5: Install Essential Command-Line Tools
 
 1. **Install useful tools**
+
    ```bash
    # Better file searching
    brew install ripgrep fd
@@ -148,6 +159,7 @@ This message shows that your installation appears to be working correctly.
    ```
 
 2. **Install Oh My Zsh (optional but recommended)**
+
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
@@ -182,6 +194,7 @@ docker compose version
 ## 🎨 Recommended Configuration
 
 ### Configure Git
+
 ```bash
 # Set VS Code as default editor
 git config --global core.editor "code --wait"
@@ -240,6 +253,7 @@ alias path='echo $PATH | tr ":" "\n"'
 ```
 
 After editing, reload:
+
 ```bash
 source ~/.zshrc
 ```
@@ -264,25 +278,32 @@ Create `~/Library/Application Support/Code/User/settings.json` with recommended 
 ```
 
 Or use VS Code UI:
+
 - Press `Cmd+,` to open settings
 - Search for each setting and configure
 
 ## 🐛 Common macOS Issues
 
 ### Issue: "Cannot verify developer" for Docker
+
 **Solution:**
+
 1. Open System Preferences → Security & Privacy
 2. Click "Open Anyway" for Docker
 3. Restart Docker Desktop
 
 ### Issue: Docker daemon not running
+
 **Solutions:**
+
 1. Quit Docker completely (Cmd+Q from menu bar icon)
 2. Restart Docker Desktop from Applications
 3. If still failing, restart your Mac
 
 ### Issue: "Permission denied" when running Docker commands
+
 **Solution:**
+
 ```bash
 # Check if Docker is running
 docker ps
@@ -291,16 +312,22 @@ docker ps
 ```
 
 ### Issue: Homebrew installation fails
+
 **Solutions:**
+
 1. Ensure Xcode Command Line Tools are installed:
+
    ```bash
    xcode-select --install
    ```
+
 2. Check for macOS updates in System Preferences
 3. Try installation again
 
 ### Issue: Git still using old version
+
 **Solution:**
+
 ```bash
 # Close and reopen terminal, then check
 which git
@@ -316,14 +343,18 @@ source ~/.zshrc
 ```
 
 ### Issue: VS Code 'code' command not found
+
 **Solution:**
+
 1. Open VS Code
 2. `Cmd+Shift+P`
 3. "Shell Command: Install 'code' command in PATH"
 4. Restart terminal
 
 ### Issue: Docker Desktop using too much resources
+
 **Solutions:**
+
 1. Click Docker icon → Settings → Resources
 2. Reduce CPU count (e.g., from 8 to 4)
 3. Reduce Memory (e.g., from 12GB to 8GB)
@@ -332,9 +363,11 @@ source ~/.zshrc
 ## 🚀 Performance Tips
 
 ### 1. Use Docker Desktop Resource Limits
+
 Don't give Docker all your RAM/CPU. Leave resources for other applications.
 
 ### 2. Clean Up Regularly
+
 ```bash
 # Remove unused images, containers, volumes
 docker system prune -af
@@ -344,14 +377,18 @@ docker system prune -af --volumes
 ```
 
 ### 3. Enable Buildkit for Faster Builds
+
 Add to `~/.zshrc`:
+
 ```bash
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 ```
 
 ### 4. Use Docker Desktop's Built-in Kubernetes (optional)
+
 For learning Kubernetes later:
+
 - Docker icon → Settings → Kubernetes
 - Check "Enable Kubernetes"
 - Apply & Restart (will take 5-10 minutes)
@@ -359,9 +396,11 @@ For learning Kubernetes later:
 ## 🌟 Useful macOS-Specific Tips
 
 ### 1. Spotlight Search
+
 - `Cmd + Space` to quickly open Terminal or VS Code
 
 ### 2. Multiple Desktops
+
 - Create separate desktops for different tasks:
   - Desktop 1: VS Code
   - Desktop 2: Terminal
@@ -369,6 +408,7 @@ For learning Kubernetes later:
 - Swipe with 3 fingers or `Ctrl + Left/Right Arrow`
 
 ### 3. Rectangle (Window Management)
+
 ```bash
 brew install --cask rectangle
 
@@ -378,6 +418,7 @@ brew install --cask rectangle
 ```
 
 ### 4. iTerm2 (Better Terminal)
+
 ```bash
 brew install --cask iterm2
 
@@ -390,11 +431,13 @@ brew install --cask iterm2
 1. ✅ Verify all tools are working
 2. 📝 Complete the [main setup verification](./README.md#verification-checklist)
 3. 🐳 Test Docker with a simple example:
+
    ```bash
    docker run -d -p 8080:80 nginx
    # Open http://localhost:8080 in browser
    # Stop container: docker stop $(docker ps -q)
    ```
+
 4. 🎓 Proceed to [Module 01: Git and GitHub](../01-Git-and-GitHub/)
 
 ## 📚 Additional Resources

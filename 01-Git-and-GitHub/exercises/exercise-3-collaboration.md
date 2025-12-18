@@ -54,6 +54,7 @@ git remote -v
 ```
 
 You should see:
+
 ```
 origin    https://github.com/YOUR-USERNAME/Hello-World.git (fetch)
 origin    https://github.com/YOUR-USERNAME/Hello-World.git (push)
@@ -377,10 +378,12 @@ result = multiply(4, 5)   # 20
 ```bash
 python test_calculator.py
 ```
+
 EOF
 
 git add README.md
 git commit -m "docs: Add comprehensive README"
+
 ```
 
 **16. Merge to main**
@@ -456,6 +459,7 @@ Find a real open source project and contribute:
 4. Fork, fix, and submit a real PR!
 
 **Suggested beginner-friendly projects:**
+
 - Documentation improvements
 - Test coverage
 - Bug fixes with detailed issues
@@ -464,6 +468,7 @@ Find a real open source project and contribute:
 ### Challenge 2: Code Review Practice
 
 Partner with a friend:
+
 1. Both fork the same repository
 2. Make different changes
 3. Review each other's pull requests
@@ -472,6 +477,7 @@ Partner with a friend:
 ### Challenge 3: Complex PR Workflow
 
 Simulate a complex workflow:
+
 1. Create PR
 2. Receive feedback (simulate)
 3. Make changes in response
@@ -481,6 +487,7 @@ Simulate a complex workflow:
 ### Challenge 4: Multi-Person Workflow
 
 With 2-3 people:
+
 1. Create a shared repository
 2. Each person creates a feature branch
 3. Submit PRs to each other
@@ -504,6 +511,7 @@ With 2-3 people:
 ### Issue: Can't push to original repository
 
 **Solution:** This is normal! You should push to your fork:
+
 ```bash
 git remote -v
 # Should push to origin (your fork), not upstream
@@ -512,6 +520,7 @@ git remote -v
 ### Issue: Fork is behind upstream
 
 **Solution:** Sync your fork:
+
 ```bash
 git fetch upstream
 git checkout main
@@ -522,6 +531,7 @@ git push origin main
 ### Issue: PR shows wrong commits
 
 **Solution:** Make sure you created branch from main:
+
 ```bash
 git checkout main
 git pull upstream main
@@ -531,6 +541,7 @@ git checkout -b new-branch
 ### Issue: Merge conflict in PR
 
 **Solution:** Update your branch:
+
 ```bash
 git fetch upstream
 git rebase upstream/main
@@ -556,6 +567,7 @@ git push --force origin your-branch
 4. Explore GitHub features (Actions, Projects, Wiki)
 
 **Pro Tip:** Contributing to open source is one of the best ways to:
+
 - Build your portfolio
 - Learn from experienced developers
 - Practice collaboration

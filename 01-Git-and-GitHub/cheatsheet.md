@@ -448,6 +448,7 @@ git push origin main
 **Types:** feat, fix, docs, style, refactor, test, chore
 
 **Example:**
+
 ```
 feat: Add user authentication
 
@@ -517,6 +518,7 @@ Add to `~/.gitconfig`:
 ```
 
 Usage:
+
 ```bash
 git st      # Instead of git status
 git visual  # Pretty log

@@ -225,6 +225,7 @@ Application that maintains state/data between sessions.
 Label for specific version (Git tag) or image version (Docker tag).
 
 **Testing**  
+
 - **Unit Testing:** Testing individual components
 - **Integration Testing:** Testing component interactions
 - **End-to-End Testing:** Testing complete workflows
@@ -259,18 +260,21 @@ Human-readable data serialization format. Used for configuration files (Docker C
 ## Common Commands Quick Reference
 
 ### Git
+
 ```bash
 git clone, git add, git commit, git push, git pull
 git branch, git checkout, git merge
 ```
 
 ### Docker
+
 ```bash
 docker build, docker run, docker ps, docker stop
 docker compose up, docker compose down
 ```
 
 ### Linux
+
 ```bash
 ls, cd, pwd, mkdir, rm
 grep, find, cat, less, tail

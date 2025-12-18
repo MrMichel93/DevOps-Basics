@@ -15,12 +15,14 @@
 ### Why Good Commit Messages Matter
 
 Six months from now:
+
 - You won't remember why you made a change
 - Someone else needs to understand your code
 - A bug needs to be traced back to its source
 - The project history needs to tell a story
 
 **Bad commit message:**
+
 ```bash
 git commit -m "fix"
 ```
@@ -28,6 +30,7 @@ git commit -m "fix"
 **Future you:** "Fix what? Where? Why?"
 
 **Good commit message:**
+
 ```bash
 git commit -m "Fix null pointer exception in user login
 
@@ -40,6 +43,7 @@ calling toLowerCase(). Added null check and test case."
 ### Commit Message Format
 
 **Standard format:**
+
 ```
 <type>: <subject>
 
@@ -49,6 +53,7 @@ calling toLowerCase(). Added null check and test case."
 ```
 
 **Example:**
+
 ```
 feat: Add user authentication endpoint
 
@@ -66,6 +71,7 @@ Closes #123
 ### Commit Types
 
 **Common prefixes:**
+
 - `feat:` - New feature
 - `fix:` - Bug fix
 - `docs:` - Documentation changes
@@ -76,6 +82,7 @@ Closes #123
 - `perf:` - Performance improvements
 
 **Examples:**
+
 ```bash
 feat: Add dark mode toggle
 fix: Resolve memory leak in image loader
@@ -90,6 +97,7 @@ perf: Optimize database queries
 ### Writing the Subject Line
 
 **Rules:**
+
 1. ✅ Start with capital letter
 2. ✅ Use imperative mood ("Add" not "Added")
 3. ✅ Keep under 50 characters
@@ -97,6 +105,7 @@ perf: Optimize database queries
 5. ✅ Be specific but concise
 
 **Good:**
+
 ```
 Add user profile page
 Fix login button alignment
@@ -105,6 +114,7 @@ Remove deprecated API endpoints
 ```
 
 **Bad:**
+
 ```
 added stuff
 fixed things
@@ -116,17 +126,20 @@ asdf
 ### Writing the Body
 
 **When to include a body:**
+
 - Complex changes needing explanation
 - Important context about WHY
 - Breaking changes
 - Multiple related changes
 
 **Format:**
+
 - Wrap at 72 characters
 - Explain WHAT and WHY (not HOW - code shows how)
 - Separate from subject with blank line
 
 **Example:**
+
 ```
 Refactor authentication middleware
 
@@ -144,6 +157,7 @@ This is preparation for adding OAuth support in #245.
 ### Linking to Issues
 
 **Closes/Fixes:**
+
 ```
 fix: Resolve database connection timeout
 
@@ -154,6 +168,7 @@ Fixes #123
 ```
 
 **References:**
+
 ```
 feat: Add pagination to user list
 
@@ -162,6 +177,7 @@ See also #789
 ```
 
 **Keywords that auto-close issues:**
+
 - `close`, `closes`, `closed`
 - `fix`, `fixes`, `fixed`
 - `resolve`, `resolves`, `resolved`
@@ -171,6 +187,7 @@ See also #789
 ### What is .gitignore?
 
 A file telling Git which files/directories to ignore. Never commit:
+
 - Build artifacts
 - Dependencies
 - Sensitive data (passwords, API keys)
@@ -188,6 +205,7 @@ touch .gitignore
 ### Common Patterns
 
 **Python project:**
+
 ```gitignore
 # Virtual environment
 venv/
@@ -223,6 +241,7 @@ Thumbs.db
 ```
 
 **Node.js project:**
+
 ```gitignore
 # Dependencies
 node_modules/
@@ -248,6 +267,7 @@ coverage/
 ```
 
 **General:**
+
 ```gitignore
 # Logs
 *.log
@@ -335,7 +355,7 @@ git commit -m "Update .gitignore"
 ### .gitignore Templates
 
 GitHub provides templates:
-https://github.com/github/gitignore
+<https://github.com/github/gitignore>
 
 ```bash
 # Quick way to get template
@@ -355,6 +375,7 @@ feature: D---E
 ```
 
 **Rules:**
+
 1. `main` branch is always deployable
 2. Create descriptive feature branches
 3. Commit often, push regularly
@@ -363,6 +384,7 @@ feature: D---E
 6. Deploy immediately after merge
 
 **Example:**
+
 ```bash
 # Create feature
 git checkout -b feature/add-dark-mode
@@ -392,6 +414,7 @@ features:   F---G   H
 ```
 
 **Branches:**
+
 - `main` - Production code
 - `develop` - Integration branch
 - `feature/*` - New features
@@ -399,6 +422,7 @@ features:   F---G   H
 - `hotfix/*` - Emergency fixes
 
 **Example:**
+
 ```bash
 # Start feature
 git checkout develop
@@ -433,6 +457,7 @@ Short-lived branches
 ```
 
 **Rules:**
+
 1. Very short-lived feature branches (< 1 day)
 2. Small, frequent merges
 3. Feature flags for incomplete features
@@ -440,6 +465,7 @@ Short-lived branches
 5. Continuous integration
 
 **Example:**
+
 ```bash
 # Small feature
 git checkout -b quick-fix
@@ -458,6 +484,7 @@ else:
 ### Branch Naming Conventions
 
 **Good branch names:**
+
 ```
 feature/user-authentication
 fix/login-button-alignment
@@ -467,6 +494,7 @@ test/add-integration-tests
 ```
 
 **Bad branch names:**
+
 ```
 mybranch
 test
@@ -476,6 +504,7 @@ asdf
 ```
 
 **Convention:**
+
 ```
 <type>/<description>
 
@@ -487,6 +516,7 @@ Types: feature, fix, refactor, docs, test, chore
 ### Commit Frequency
 
 **Good practices:**
+
 - ✅ Commit when you complete a logical unit of work
 - ✅ Commit before switching tasks
 - ✅ Commit at end of work session
@@ -494,6 +524,7 @@ Types: feature, fix, refactor, docs, test, chore
 - ✅ Commit before risky refactoring
 
 **Avoid:**
+
 - ❌ Committing broken code
 - ❌ Committing half-finished features
 - ❌ Giant commits with unrelated changes
@@ -504,6 +535,7 @@ Types: feature, fix, refactor, docs, test, chore
 **One commit = one logical change**
 
 **Good:**
+
 ```bash
 # Commit 1
 git add authentication.py tests/test_auth.py
@@ -515,6 +547,7 @@ git commit -m "docs: Document authentication endpoints"
 ```
 
 **Bad:**
+
 ```bash
 # One giant commit
 git add .
@@ -524,12 +557,14 @@ git commit -m "Add authentication, fix bugs, update docs, refactor code"
 ### Commit Early, Commit Often
 
 **Benefits:**
+
 - Easy to revert specific changes
 - Better history for debugging
 - Easier code review
 - Safer experimentation
 
 **Example workflow:**
+
 ```bash
 # Write test
 git add tests/test_login.py
@@ -563,6 +598,7 @@ git gc --prune=now --aggressive
 ```
 
 **Prevention is better:**
+
 1. Use environment variables
 2. Never hardcode secrets
 3. Use `.gitignore`
@@ -571,11 +607,13 @@ git gc --prune=now --aggressive
 ### Keep Commits Focused
 
 **Bad:**
+
 ```bash
 git commit -m "Fix login bug, add dark mode, update dependencies"
 ```
 
 **Good:**
+
 ```bash
 git commit -m "fix: Resolve login timeout issue"
 git commit -m "feat: Add dark mode toggle"
@@ -585,6 +623,7 @@ git commit -m "chore: Update security dependencies"
 ### Rewriting History (Local Only!)
 
 **Amend last commit:**
+
 ```bash
 # Forgot to add file
 git add forgotten_file.py
@@ -595,6 +634,7 @@ git commit --amend -m "Better message"
 ```
 
 **Interactive rebase:**
+
 ```bash
 # Clean up last 3 commits
 git rebase -i HEAD~3
@@ -610,7 +650,8 @@ git rebase -i HEAD~3
 
 ## 📋 Repository Structure
 
-### Good project structure:
+### Good project structure
+
 ```
 my-project/
 ├── .git/
@@ -628,9 +669,10 @@ my-project/
 └── scripts/
 ```
 
-### Essential files:
+### Essential files
 
 **README.md:**
+
 ```markdown
 # Project Name
 
@@ -650,10 +692,12 @@ Brief description
 ```
 
 **LICENSE:**
+
 - MIT, Apache 2.0, GPL, etc.
 - Required for open source
 
 **CONTRIBUTING.md:**
+
 - How to contribute
 - Coding standards
 - PR process
@@ -661,6 +705,7 @@ Brief description
 ## 🎯 Quick Reference Checklist
 
 Before pushing:
+
 - [ ] Commits have good messages
 - [ ] No sensitive data committed
 - [ ] .gitignore covers necessary files
@@ -669,6 +714,7 @@ Before pushing:
 - [ ] Documentation updated
 
 Before merging PR:
+
 - [ ] PR description is clear
 - [ ] Tests pass
 - [ ] Code reviewed
@@ -744,9 +790,10 @@ Ensure you understand:
 4. When and how to commit
 5. How to keep repository clean
 
-## 🚀 Congratulations!
+## 🚀 Congratulations
 
 You've completed the Git and GitHub module! You now have:
+
 - Solid understanding of version control
 - Essential Git skills
 - GitHub collaboration knowledge
@@ -755,6 +802,7 @@ You've completed the Git and GitHub module! You now have:
 **Next:** Move on to [Module 02: Command-Line Mastery](../02-Command-Line-Mastery/) to become proficient with the terminal.
 
 **Keep practicing:**
+
 - Use Git for all your projects
 - Contribute to open source
 - Review others' code

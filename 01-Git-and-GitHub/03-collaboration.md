@@ -13,6 +13,7 @@
 ## 🤝 Why Collaboration Matters
 
 Modern software development is rarely a solo activity. You'll work with:
+
 - Other developers on your team
 - Open source contributors worldwide
 - Code reviewers ensuring quality
@@ -25,6 +26,7 @@ GitHub provides tools for all of this.
 ### What is a Fork?
 
 A fork is your personal copy of someone else's repository. You can:
+
 - Make changes without affecting the original
 - Experiment freely
 - Submit improvements back via pull requests
@@ -41,6 +43,7 @@ A fork is your personal copy of someone else's repository. You can:
 ### Forking Process
 
 **1. Fork on GitHub:**
+
 ```
 1. Visit repository (e.g., https://github.com/octocat/hello-world)
 2. Click "Fork" button (top right)
@@ -49,6 +52,7 @@ A fork is your personal copy of someone else's repository. You can:
 ```
 
 **2. Clone your fork:**
+
 ```bash
 # Clone your fork (not the original)
 git clone https://github.com/YOUR-USERNAME/hello-world.git
@@ -56,6 +60,7 @@ cd hello-world
 ```
 
 **3. Add upstream remote:**
+
 ```bash
 # Add original repo as "upstream"
 git remote add upstream https://github.com/octocat/hello-world.git
@@ -65,6 +70,7 @@ git remote -v
 ```
 
 **Output:**
+
 ```
 origin    https://github.com/YOUR-USERNAME/hello-world.git (fetch)
 origin    https://github.com/YOUR-USERNAME/hello-world.git (push)
@@ -73,6 +79,7 @@ upstream  https://github.com/octocat/hello-world.git (push)
 ```
 
 **4. Keep your fork updated:**
+
 ```bash
 # Fetch updates from original
 git fetch upstream
@@ -90,6 +97,7 @@ git push origin main
 ### What is a Pull Request?
 
 A pull request is a proposal to merge your changes into another repository. It:
+
 - Shows what you changed (diff)
 - Allows discussion and code review
 - Enables automated testing
@@ -117,6 +125,7 @@ git push origin fix-typo-in-readme
 ```
 
 **5. Create PR on GitHub:**
+
 ```
 1. Go to your fork on GitHub
 2. Click "Compare & pull request" button
@@ -131,6 +140,7 @@ git push origin fix-typo-in-readme
 #### Good PR Title and Description
 
 **Good:**
+
 ```
 Title: Fix authentication bug in login endpoint
 
@@ -152,6 +162,7 @@ Fixes #123
 ```
 
 **Bad:**
+
 ```
 Title: fix stuff
 
@@ -162,6 +173,7 @@ changed some code
 #### PR Checklist
 
 Before submitting:
+
 - ✅ Code works and is tested
 - ✅ Follows project's style guide
 - ✅ Includes tests (if applicable)
@@ -189,6 +201,7 @@ git push origin fix-typo-in-readme
 **The PR automatically updates!** No need to create a new PR.
 
 **If many small commits, consider squashing:**
+
 ```bash
 # Combine last 3 commits into one
 git rebase -i HEAD~3
@@ -205,6 +218,7 @@ git push --force origin fix-typo-in-readme
 ### As a Reviewer
 
 **Good code reviews:**
+
 - ✅ Are constructive and kind
 - ✅ Explain why something should change
 - ✅ Suggest alternatives
@@ -212,6 +226,7 @@ git push --force origin fix-typo-in-readme
 - ✅ Catch bugs and security issues
 
 **Review checklist:**
+
 - Does code solve the stated problem?
 - Is it readable and maintainable?
 - Are there tests?
@@ -236,6 +251,7 @@ git push --force origin fix-typo-in-readme
 ### As a PR Author
 
 **Receiving feedback:**
+
 - Don't take it personally
 - Ask for clarification if needed
 - Explain your reasoning
@@ -243,6 +259,7 @@ git push --force origin fix-typo-in-readme
 - Thank reviewers
 
 **Example response:**
+
 ```
 Thanks for the feedback! You're right about the error handling.
 I've added ValueError catching and updated the tests.
@@ -257,6 +274,7 @@ Let me know if you feel strongly about changing it.
 ### What are Issues?
 
 GitHub Issues are:
+
 - Bug reports
 - Feature requests
 - Tasks
@@ -266,6 +284,7 @@ GitHub Issues are:
 ### Creating Good Issues
 
 **Bug report template:**
+
 ```markdown
 ## Description
 Brief description of the bug.
@@ -295,6 +314,7 @@ This only happens with some email addresses.
 ```
 
 **Feature request template:**
+
 ```markdown
 ## Feature Description
 Add dark mode to the application.
@@ -331,6 +351,7 @@ When PR merges, linked issue automatically closes!
 ### Issue Labels
 
 Common labels:
+
 - `bug` - Something isn't working
 - `enhancement` - New feature or request
 - `documentation` - Documentation improvements
@@ -346,6 +367,7 @@ Let's contribute to an open source project:
 ### Step 1: Find a Project
 
 Look for:
+
 - `good first issue` label
 - Active maintainers
 - Clear contribution guidelines
@@ -390,6 +412,7 @@ git push origin fix-issue-42
 ### Step 5: Create Pull Request
 
 On GitHub:
+
 1. Go to original repository
 2. Click "Pull requests" → "New pull request"
 3. Click "compare across forks"
@@ -490,6 +513,7 @@ git branch -d feature-new-api
 Teams often protect the `main` branch:
 
 **Protection rules:**
+
 - ✅ Require pull request reviews
 - ✅ Require status checks (tests must pass)
 - ✅ Prevent force pushes
@@ -510,6 +534,7 @@ git push origin main
 ### 1. Code Owners
 
 Create `.github/CODEOWNERS`:
+
 ```
 # Auto-assign reviewers based on files changed
 *.js @frontend-team
@@ -520,6 +545,7 @@ Create `.github/CODEOWNERS`:
 ### 2. PR Templates
 
 Create `.github/pull_request_template.md`:
+
 ```markdown
 ## Description
 [Describe your changes]
@@ -539,6 +565,7 @@ Create `.github/pull_request_template.md`:
 ### 3. Issue Templates
 
 Create `.github/ISSUE_TEMPLATE/bug_report.md`:
+
 ```markdown
 ---
 name: Bug Report
@@ -571,6 +598,7 @@ What should happen...
 **Problem:** Target branch changed after you created your branch.
 
 **Solution:**
+
 ```bash
 # Update your branch
 git checkout main
@@ -586,6 +614,7 @@ git push --force origin your-feature-branch
 ### Issue: "Accidentally committed to main"
 
 **Solution:**
+
 ```bash
 # Create branch from current state
 git checkout -b feature-branch
@@ -603,7 +632,7 @@ git checkout feature-branch
 **Find and contribute to a real open source project:**
 
 1. **Find a project:**
-   - Go to https://github.com/topics/good-first-issue
+   - Go to <https://github.com/topics/good-first-issue>
    - Or search: "good first issue" + your favorite language
 
 2. **Read contribution guidelines:**
@@ -639,6 +668,7 @@ Fantastic! You now know how professionals collaborate.
 **Next:** Learn [Best Practices](./04-best-practices.md) to write better commits and maintain clean repositories.
 
 **Practice:**
+
 - Find an open source project and read their CONTRIBUTING.md
 - Create a practice repo and invite a friend to collaborate
 - Review some pull requests on GitHub (even just reading them helps)
