@@ -17,7 +17,7 @@ This comprehensive course covers everything from how the Internet works to build
 - 🛠️ **Developer Tools**: Browser DevTools, Postman, curl, HTTPie
 - 📡 **HTTP Protocol**: Request/response cycle, methods, status codes, headers
 - 🔌 **APIs**: REST design, authentication, security, real-world usage
-- 🔐 **Security**: Input validation, rate limiting, CORS, SQL injection, XSS prevention
+- 🔐 **Security**: Input validation, rate limiting, CORS, SQL injection protection, XSS protection
 - ⚡ **Real-Time**: WebSockets for live communication
 - 🔒 **HTTPS/TLS**: Encryption, certificates, man-in-the-middle attacks
 
