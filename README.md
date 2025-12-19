@@ -282,7 +282,7 @@ git clone https://github.com/MrMichel93/DevOps-Basics.git
 cd DevOps-Basics
 ```
 
-1. **Start with Prerequisites**
+2. **Start with Prerequisites**
 
 ```bash
 cd 00-Prerequisites
@@ -290,7 +290,7 @@ cat README.md
 # Follow the setup guide
 ```
 
-1. **Follow the modules in order**
+3. **Follow the modules in order**
 
 - Each module builds on the previous one
 - Complete hands-on exercises
