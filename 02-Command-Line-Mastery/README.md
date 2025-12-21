@@ -404,6 +404,40 @@ tar, gzip, zip, unzip
 - [Command Line Crash Course](https://learnpythonthehardway.org/book/appendixa.html)
 - [Explain Shell](https://explainshell.com/) - Explains any command
 
+## 🔒 Security Considerations
+
+### File Permissions Matter
+
+- Understanding file permission format (rwxrwxrwx)
+- Never use chmod 777 in production
+- Principle of least privilege
+- Secure script permissions (750: owner can read/write/execute, group can read/execute, others have no access)
+
+### Secure Shell Scripting
+
+- Validate all inputs
+- Quote variables properly
+- Use absolute paths
+- Avoid eval and exec with user input
+
+### Safe Credential Handling
+
+- Never hardcode passwords in scripts
+- Use environment variables or secret managers
+- Secure temporary files (use mktemp)
+- Clean up sensitive data
+
+### Audit Commands
+
+- Be cautious with rm -rf
+- Verify paths before destructive operations
+- Use -i flag for interactive confirmation
+- Keep audit logs of critical commands
+
+### Hands-on Security Exercise
+
+[Add exercise: Write a secure backup script with proper permissions]
+
 ## 🚀 Ready to Start?
 
 Begin with [01: Navigation](./01-navigation.md) and work through each lesson.

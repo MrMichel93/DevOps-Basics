@@ -469,3 +469,37 @@ Now that you have the tools, it's time to learn HTTP:
 - Use curl's `-v` flag when debugging
 - HTTPie's output is great for screenshots and documentation
 - All tools can export requests in different formats
+
+## 🔒 Security Considerations
+
+### Protecting Sensitive Data in Tools
+
+- Never save API keys in Postman collections shared publicly
+- Use Postman environment variables for secrets
+- Clear sensitive data from browser DevTools before screenshots
+- Be careful when sharing curl commands (may contain tokens)
+
+### Secure API Testing
+
+- Always use HTTPS in production environments
+- Validate SSL certificates (avoid curl -k flag which skips certificate verification)
+- Review network requests for exposed credentials
+- Use authentication headers properly (Authorization, not in URL)
+
+### DevTools Security Features
+
+- Inspect security headers (HSTS, CSP, X-Frame-Options)
+- Check for mixed content warnings
+- Verify certificate information in DevTools
+- Monitor for suspicious third-party requests
+
+### Safe Debugging Practices
+
+- Don't debug with production credentials locally
+- Use test/staging environments for experiments
+- Clear browser cache/cookies when testing auth
+- Disable browser extensions when troubleshooting
+
+### Hands-on Security Exercise
+
+[Add exercise: Use DevTools to inspect security headers on popular websites]

@@ -333,6 +333,44 @@ Hands-on exercises coming soon! For now, experiment with the concepts covered ab
 4. **Environment-specific configs** - Development vs Production
 5. **Document everything** - README is part of IaC
 
+## 🔒 Security Considerations
+
+### Secure Configuration Management
+
+- Never commit secrets to version control
+- Use .env files for local secrets (and add .env to .gitignore)
+- Leverage Docker secrets for sensitive data
+- Use environment-specific configuration files
+- Encrypt sensitive infrastructure code
+
+### Container Security
+
+- Use official and verified base images
+- Scan images for vulnerabilities regularly
+- Don't run containers as root user
+- Minimize image layers and attack surface
+- Keep base images updated
+
+### Network Security in IaC
+
+- Define explicit network boundaries
+- Use Docker networks to isolate services
+- Limit exposed ports (only expose what's needed)
+- Use internal networks for service-to-service communication
+- Implement proper firewall rules in IaC
+
+### Access Control
+
+- Use secrets management tools (HashiCorp Vault, AWS Secrets Manager)
+- Implement least privilege for service accounts
+- Rotate credentials defined in IaC
+- Audit infrastructure changes via git history
+- Use signed commits for infrastructure changes
+
+### Hands-on Security Exercise
+
+[Add exercise: Create a secure Docker Compose setup with secrets management]
+
 ## 🚀 Next Steps
 
 1. Read module content
