@@ -31,6 +31,54 @@
       "pattern": "^https://github.community"
     },
     {
+      "pattern": "^https://www.freecodecamp.org"
+    },
+    {
+      "pattern": "^https://www.codecademy.com"
+    },
+    {
+      "pattern": "^https://cs50.harvard.edu"
+    },
+    {
+      "pattern": "^https://git-scm.com"
+    },
+    {
+      "pattern": "^https://skills.github.com"
+    },
+    {
+      "pattern": "^https://developer.mozilla.org"
+    },
+    {
+      "pattern": "^https://linuxjourney.com"
+    },
+    {
+      "pattern": "^https://www.khanacademy.org"
+    },
+    {
+      "pattern": "^https://www.py4e.com"
+    },
+    {
+      "pattern": "^https://javascript.info"
+    },
+    {
+      "pattern": "^https://www.theodinproject.com"
+    },
+    {
+      "pattern": "^https://stackoverflow.com"
+    },
+    {
+      "pattern": "^https://dev.to"
+    },
+    {
+      "pattern": "^https://httpbin.org"
+    },
+    {
+      "pattern": "^https://postman-echo.com"
+    },
+    {
+      "pattern": "^https://jsonplaceholder.typicode.com"
+    },
+    {
       "pattern": "^\\."
     },
     {
