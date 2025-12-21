@@ -31,6 +31,21 @@
       "pattern": "^https://github.community"
     },
     {
+      "pattern": "^https://ifconfig.me"
+    },
+    {
+      "pattern": "^https://whatismyip.com"
+    },
+    {
+      "pattern": "^https://httpbin.org"
+    },
+    {
+      "pattern": "^https://postman-echo.com"
+    },
+    {
+      "pattern": "^https://jsonplaceholder.typicode.com"
+    },
+    {
       "pattern": "^\\."
     },
     {
