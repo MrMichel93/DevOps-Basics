@@ -338,7 +338,7 @@ Hands-on exercises coming soon! For now, experiment with the concepts covered ab
 ### Secure Configuration Management
 
 - Never commit secrets to version control
-- Use .env files (and .gitignore them)
+- Use .env files for local secrets (and add .env to .gitignore)
 - Leverage Docker secrets for sensitive data
 - Use environment-specific configuration files
 - Encrypt sensitive infrastructure code

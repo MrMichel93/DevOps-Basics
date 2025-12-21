@@ -482,7 +482,7 @@ Now that you have the tools, it's time to learn HTTP:
 ### Secure API Testing
 
 - Always use HTTPS in production environments
-- Validate SSL certificates (don't use curl -k casually)
+- Validate SSL certificates (avoid curl -k flag which skips certificate verification)
 - Review network requests for exposed credentials
 - Use authentication headers properly (Authorization, not in URL)
 

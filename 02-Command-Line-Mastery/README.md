@@ -408,10 +408,10 @@ tar, gzip, zip, unzip
 
 ### File Permissions Matter
 
-- Understanding rwxrwxrwx
+- Understanding file permission format (rwxrwxrwx)
 - Never use chmod 777 in production
 - Principle of least privilege
-- Secure script permissions (750, not 777)
+- Secure script permissions (750: owner can read/write/execute, group can read/execute, others have no access)
 
 ### Secure Shell Scripting
 
