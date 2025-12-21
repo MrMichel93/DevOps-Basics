@@ -38,6 +38,9 @@
     },
     {
       "pattern": "^LICENSE$"
+    },
+    {
+      "pattern": "^checkpoint-solutions/"
     }
   ],
   "replacementPatterns": [],
