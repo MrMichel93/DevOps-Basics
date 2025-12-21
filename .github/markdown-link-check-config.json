@@ -79,6 +79,219 @@
       "pattern": "^https://jsonplaceholder.typicode.com"
     },
     {
+      "pattern": "^https://example.com"
+    },
+    {
+      "pattern": "^https://web.dev"
+    },
+    {
+      "pattern": "^https://www.youtube.com"
+    },
+    {
+      "pattern": "^https://howdns.works"
+    },
+    {
+      "pattern": "^http://info.cern.ch"
+    },
+    {
+      "pattern": "^https://www.postman.com"
+    },
+    {
+      "pattern": "^https://developer.chrome.com"
+    },
+    {
+      "pattern": "^https://learning.postman.com"
+    },
+    {
+      "pattern": "^https://curl.se"
+    },
+    {
+      "pattern": "^https://httpie.io"
+    },
+    {
+      "pattern": "^https://code.visualstudio.com"
+    },
+    {
+      "pattern": "^https://docs.microsoft.com"
+    },
+    {
+      "pattern": "^https://aka.ms"
+    },
+    {
+      "pattern": "^https://docs.brew.sh"
+    },
+    {
+      "pattern": "^https://12factor.net"
+    },
+    {
+      "pattern": "^https://aaronparecki.com"
+    },
+    {
+      "pattern": "^https://any-api.com"
+    },
+    {
+      "pattern": "^https://apilist.fun"
+    },
+    {
+      "pattern": "^https://c4model.com"
+    },
+    {
+      "pattern": "^https://catfact.ninja"
+    },
+    {
+      "pattern": "^https://cheatsheetseries.owasp.org"
+    },
+    {
+      "pattern": "^https://cloud.google.com"
+    },
+    {
+      "pattern": "^https://content-security-policy.com"
+    },
+    {
+      "pattern": "^https://cwe.mitre.org"
+    },
+    {
+      "pattern": "^https://dog.ceo"
+    },
+    {
+      "pattern": "^https://draw.io"
+    },
+    {
+      "pattern": "^https://en.wikipedia.org"
+    },
+    {
+      "pattern": "^https://excalidraw.com"
+    },
+    {
+      "pattern": "^https://flask-socketio.readthedocs.io"
+    },
+    {
+      "pattern": "^https://geekflare.com"
+    },
+    {
+      "pattern": "^https://github.blog"
+    },
+    {
+      "pattern": "^https://ifconfig.me"
+    },
+    {
+      "pattern": "^https://jira.atlassian.com"
+    },
+    {
+      "pattern": "^https://jwt.io"
+    },
+    {
+      "pattern": "^https://marketplace.visualstudio.com"
+    },
+    {
+      "pattern": "^https://medium.com"
+    },
+    {
+      "pattern": "^https://oauth.net"
+    },
+    {
+      "pattern": "^https://openid.net"
+    },
+    {
+      "pattern": "^https://owasp.org"
+    },
+    {
+      "pattern": "^https://packagist.org"
+    },
+    {
+      "pattern": "^https://pkg.go.dev"
+    },
+    {
+      "pattern": "^https://pokeapi.co"
+    },
+    {
+      "pattern": "^https://portal.azure.com"
+    },
+    {
+      "pattern": "^https://programmableweb.com"
+    },
+    {
+      "pattern": "^https://public-apis.io"
+    },
+    {
+      "pattern": "^https://publicapis.dev"
+    },
+    {
+      "pattern": "^https://pymongo.readthedocs.io"
+    },
+    {
+      "pattern": "^https://rapidapi.com"
+    },
+    {
+      "pattern": "^https://redis.io"
+    },
+    {
+      "pattern": "^https://reqres.in"
+    },
+    {
+      "pattern": "^https://restfulapi.net"
+    },
+    {
+      "pattern": "^https://roadmap.sh"
+    },
+    {
+      "pattern": "^https://socket.io"
+    },
+    {
+      "pattern": "^https://socketio.readthedocs.io"
+    },
+    {
+      "pattern": "^https://swapi.dev"
+    },
+    {
+      "pattern": "^https://swagger.io"
+    },
+    {
+      "pattern": "^https://trello.com"
+    },
+    {
+      "pattern": "^https://www.atlassian.com"
+    },
+    {
+      "pattern": "^https://www.elastic.co"
+    },
+    {
+      "pattern": "^https://www.iana.org"
+    },
+    {
+      "pattern": "^https://www.mongodb.com"
+    },
+    {
+      "pattern": "^https://www.npmjs.com"
+    },
+    {
+      "pattern": "^https://www.owasp.org"
+    },
+    {
+      "pattern": "^https://www.postgresql.org"
+    },
+    {
+      "pattern": "^https://www.restapitutorial.com"
+    },
+    {
+      "pattern": "^https://www.sqlitetutorial.net"
+    },
+    {
+      "pattern": "^https://www.toptal.com"
+    },
+    {
+      "pattern": "^https://www.whatismyip.com"
+    },
+    {
+      "pattern": "^https://www.wireshark.org"
+    },
+    {
+      "pattern": "^https://www.w3schools.com"
+    },
+    {
+      "pattern": "^https://xkcd.com"
+    },
+    {
       "pattern": "^\\."
     },
     {
