@@ -259,6 +259,8 @@ const web = new docker.Container("web", {
 | **Local Dev** | ✅ Perfect | ❌ No | ⚠️ Can work | ⚠️ Too complex |
 | **Production** | ⚠️ Limited | ✅ Excellent | ✅ Good | ✅ Best |
 
+**Note:** Pulumi is excluded from this comparison table as it uses programming languages (TypeScript, Python, Go) rather than configuration languages (YAML, HCL), making direct feature comparison less relevant. Pulumi is similar to Terraform in scope but with a fundamentally different approach.
+
 **Transferable IaC Concepts:**
 
 - Declarative configuration

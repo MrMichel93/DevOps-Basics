@@ -220,6 +220,8 @@ Core CI/CD concepts apply across all tools:
 | Secrets | GitHub Secrets | CI/CD Variables | Credentials | Context/Secrets |
 | Artifacts | Upload/Download | Artifacts | Archive | Persist/Attach |
 
+**Note:** Travis CI is excluded from this comparison table as it's losing market share and many projects are migrating away from it. The tools shown represent the most actively developed and widely adopted CI/CD platforms in 2024.
+
 **Transferable CI/CD Concepts:**
 
 - Pipeline stages (build, test, deploy)

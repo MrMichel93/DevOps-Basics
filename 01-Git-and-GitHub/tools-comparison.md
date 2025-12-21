@@ -118,6 +118,8 @@ Platform-specific features (Actions, Pipelines, etc.) have equivalents:
 | Container Registry | Packages | Container Registry | - |
 | Security Scanning | Dependabot | Security Dashboard | - |
 
+**Note:** Gitea/Forgejo are excluded from this table as they focus on core Git hosting with fewer enterprise features. They provide basic CI/CD hooks and issue tracking, but lack the advanced platform features shown above.
+
 **Core Git Skills (Transferable):**
 
 - `git clone`, `git commit`, `git push`, `git pull`

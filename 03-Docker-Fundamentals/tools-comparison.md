@@ -136,6 +136,8 @@ Core containerization concepts apply across all tools:
 | Registry | Docker Hub | Quay.io, Docker Hub | Any OCI registry |
 | Multi-container | Docker Compose | podman-compose | Kubernetes |
 
+**Note:** LXC/LXD is excluded from this table as it's a system container technology (like lightweight VMs) rather than application container runtime, making direct comparison less relevant for the application-focused use cases in this course.
+
 **Transferable Skills:**
 
 - Dockerfile syntax (identical across tools)

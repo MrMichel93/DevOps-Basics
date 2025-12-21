@@ -236,6 +236,8 @@ docker logs container
 | **Retention** | Container life | Configurable | Configurable | Configurable | Configurable |
 | **Scaling** | N/A | Cluster | Cluster | Simpler | Auto |
 
+**Note:** Commercial solutions (Datadog, New Relic, Splunk) are not included in the comparison table as they are grouped under "Cloud Solutions" - they are all-in-one platforms with similar capabilities but different pricing and feature sets. They generally excel in all categories but require commercial licenses.
+
 **Transferable Concepts:**
 
 - Structured logging (JSON format)
