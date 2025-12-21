@@ -539,6 +539,44 @@ Hands-on exercises coming soon! For now, try creating your own GitHub Actions wo
 - [Awesome Actions](https://github.com/sdras/awesome-actions)
 - [act - Run Actions Locally](https://github.com/nektos/act)
 
+## 🔒 Security Considerations
+
+### Secrets Management
+
+- NEVER hardcode secrets in workflow files
+- Use GitHub Secrets for sensitive data
+- Limit secret access to necessary workflows
+- Rotate secrets regularly
+- Use environment-specific secrets
+
+### Workflow Security
+
+- Pin actions to specific SHA (not @main or @v1)
+- Review third-party actions before using
+- Use principle of least privilege for permissions
+- Enable required status checks
+- Use environments for deployment protection
+
+### Supply Chain Security
+
+- Enable Dependabot for dependencies
+- Use dependency review in pull requests
+- Scan Docker images for vulnerabilities
+- Sign commits and artifacts
+- Verify checksums of downloaded tools
+
+### Secure CI/CD Practices
+
+- Isolate build environments
+- Don't expose secrets in logs
+- Use pull request approval for sensitive workflows
+- Limit who can approve deployments
+- Audit workflow runs regularly
+
+### Hands-on Security Exercise
+
+[Add exercise: Set up a workflow with proper secret management and security scanning]
+
 ## 🎓 Next Steps
 
 1. Read [01: GitHub Actions Basics](./01-github-actions-basics.md)

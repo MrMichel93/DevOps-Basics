@@ -266,6 +266,33 @@ git --version
 
 If any of these don't return expected values, revisit the setup module.
 
+## 🔒 Security Considerations
+
+### Never Commit Secrets
+
+- ❌ API keys, passwords, tokens in code
+- ✅ Use .gitignore for sensitive files
+- ✅ Use environment variables
+- ✅ Tools: git-secrets, gitleaks
+
+### Secure Your Repository
+
+- Enable branch protection
+- Require code reviews
+- Enable Dependabot alerts
+- Use signed commits (GPG)
+
+### Practice Secure Collaboration
+
+- Review permissions regularly
+- Use least privilege principle
+- Rotate access tokens quarterly
+- Enable 2FA on GitHub account
+
+### Hands-on Security Exercise
+
+[Add exercise: Set up git-secrets and try to commit a fake API key]
+
 ## 🚀 Ready to Start?
 
 Begin with [01: Basic Commands](./01-basic-commands.md) and work through each lesson in order.

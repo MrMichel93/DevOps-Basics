@@ -397,6 +397,52 @@ Hands-on exercises coming soon! For now, explore the monitoring tools mentioned 
 4. **Health checks are essential** - Know when things break
 5. **Don't log secrets** - Security first
 
+## 🔒 Security Considerations
+
+### Secure Logging Practices
+
+- NEVER log passwords, tokens, or API keys
+- Sanitize sensitive data before logging (mask credit cards, SSNs)
+- Use log levels appropriately (DEBUG only in development)
+- Implement log retention policies
+- Encrypt logs containing sensitive information
+
+### Monitoring Security Events
+
+- Monitor failed login attempts
+- Track unusual API usage patterns
+- Alert on privilege escalation attempts
+- Log all administrative actions
+- Monitor for suspicious file access
+
+### Protecting Logs and Metrics
+
+- Restrict access to logging infrastructure
+- Use authentication for monitoring dashboards
+- Encrypt logs in transit and at rest
+- Implement audit logs for who accessed logs
+- Don't expose internal metrics publicly
+
+### Security Monitoring
+
+- Set up alerts for security events
+- Monitor certificate expiration
+- Track dependency vulnerabilities
+- Alert on unusual traffic patterns
+- Implement intrusion detection logging
+
+### Compliance and Audit
+
+- Maintain tamper-proof audit logs
+- Implement log integrity verification
+- Follow data retention regulations (GDPR, HIPAA)
+- Log access controls and changes
+- Regular security log reviews
+
+### Hands-on Security Exercise
+
+[Add exercise: Implement secure logging with sensitive data masking and security event monitoring]
+
 ## 🚀 Next Steps
 
 1. Read module content
