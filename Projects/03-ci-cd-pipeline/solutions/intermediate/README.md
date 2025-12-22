@@ -62,7 +62,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t myapp:${{ github.sha }} .
       - name: Scan image
-        run: docker scan myapp:${{ github.sha }}
+        run: docker scout cves myapp:${{ github.sha }}
       - name: Push to registry
         run: docker push myapp:${{ github.sha }}
 ```

@@ -147,11 +147,11 @@ Example:
 
 Example:
 1. User submits credentials
-2. Backend validates against database
-3. JWT token generated and returned
-4. Client stores token
-5. Subsequent requests include token in header
-6. Backend validates token for protected routes
+2. Backend validates against database.
+3. JWT token generated and returned.
+4. Client stores token.
+5. Subsequent requests include token in header.
+6. Backend validates token for protected routes.
 ```
 
 ---
