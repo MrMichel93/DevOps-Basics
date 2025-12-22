@@ -290,7 +290,16 @@ cat README.md
 # Follow the setup guide
 ```
 
-3. **Follow the modules in order**
+3. **Track Your Progress** 📊
+
+Use the [**PROGRESS-TRACKER.md**](./PROGRESS-TRACKER.md) to track your learning journey:
+
+- ✅ Checklist for all 13 modules
+- 📈 Progress indicators and milestones
+- 🎯 Skills mastered tracker
+- 🏆 Certification readiness checklist
+
+4. **Follow the modules in order**
 
 - Each module builds on the previous one
 - Complete hands-on exercises
