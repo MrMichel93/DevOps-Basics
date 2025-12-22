@@ -180,6 +180,30 @@ If not installed:
 - ❌ Authentication mechanisms (we'll explain everything)
 - ❌ Database concepts (included in the course)
 
+## ✅ Setup Verification Checklist
+
+Use this checklist to ensure your environment is ready:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│              Environment Setup Checklist                │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  [ ] Modern web browser installed (Chrome/Firefox)     │
+│  [ ] Browser DevTools accessible (F12 works)           │
+│  [ ] Text editor installed (VS Code recommended)       │
+│  [ ] Command line/terminal accessible                  │
+│  [ ] Git installed and configured                      │
+│  [ ] GitHub account created and verified               │
+│  [ ] curl command available                            │
+│  [ ] Can execute: curl https://api.github.com/         │
+│  [ ] Network tab visible in browser DevTools           │
+│                                                         │
+│  All checked? You're ready to start! 🚀                │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
 ## 🚀 Quick Start Test
 
 Let's verify your setup with a simple test:
