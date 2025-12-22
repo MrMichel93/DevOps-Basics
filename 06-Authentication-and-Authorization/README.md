@@ -12,6 +12,32 @@
 
 ## 🔐 Authentication vs Authorization
 
+### Quick Comparison
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│              Authentication vs Authorization                  │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  🔑 AUTHENTICATION              🛡️ AUTHORIZATION            │
+│  "Who are you?"                 "What can you do?"          │
+│                                                              │
+│  ✓ Verifies identity            ✓ Grants permissions        │
+│  ✓ Login process                ✓ Access control            │
+│  ✓ Credentials check            ✓ Role-based rules          │
+│                                                              │
+│  Examples:                      Examples:                    │
+│  • Username + password          • Admin can delete users    │
+│  • Fingerprint scan             • User can edit own profile │
+│  • Two-factor auth (2FA)        • Guest can only read       │
+│                                                              │
+│  🏢 Real-World Analogy:                                     │
+│  Authentication = Showing ID at airport security            │
+│  Authorization  = Boarding pass for specific plane          │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
 ### Authentication
 
 **Who are you?**
@@ -33,11 +59,6 @@ Examples:
 - Admin can delete users
 - Regular user can only view their own profile
 - Guest can only read public content
-
-### Real-World Analogy
-
-**Authentication**: Showing your ID at airport security  
-**Authorization**: Your boarding pass determines which plane you can board
 
 ## 🍪 Session-Based Authentication
 
