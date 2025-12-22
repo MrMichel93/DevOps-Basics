@@ -415,7 +415,7 @@ After Monitoring:
 
 **Mapped to Course Modules:**
 - ✅ Module 06: Monitoring and Logging
-- ✅ Module 04: HTTP Fundamentals (understanding metrics)
+- ✅ Module 06: Monitoring and Logging (understanding metrics and dashboards)
 
 ### Phase 6: Security Integration (Months 10-14)
 
@@ -474,7 +474,7 @@ security:
 resource "aws_eks_cluster" "techcorp" {
   name     = "techcorp-${var.environment}"
   role_arn = aws_iam_role.cluster.arn
-  version  = "1.28"
+  version  = var.kubernetes_version  # Parameterized for easier updates
 
   vpc_config {
     subnet_ids = var.subnet_ids

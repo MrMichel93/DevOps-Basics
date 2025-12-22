@@ -87,15 +87,13 @@ Netlify: $0 (free tier)
 Heroku: $0 (free tier)
 MongoDB Atlas: $0 (free tier)
 AWS S3: $25 (500GB storage)
-CloudFlare: $20 (basic protection)
-Domain & Email: $20
 Total: $45/month
 ```
 
 **Lessons:**
 - ✅ Free tiers are perfect for MVP
 - ✅ Don't over-engineer early
-- ❌ Free Heroku dyno sleeps (bad UX)
+- ❌ Free Heroku dyno sleeps (apps go to sleep after 30 minutes of inactivity, causing cold start delays)
 - ❌ No video transcoding (format issues)
 
 ### Stage 2: Product Launch - 1,000 Users (Apr-Jun 2021)
