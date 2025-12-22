@@ -819,13 +819,13 @@ Benefits:
 
 **1. Identify Your Biggest Pain Point:**
 ```
-Our biggest challenge is: _____________________
+Our biggest challenge is: ___
 
-This causes problems because: _____________________
+This causes problems because: ___
 
-Impact on business: _____________________
+Impact on business: ___
 
-Impact on team: _____________________
+Impact on team: ___
 ```
 
 **2. Choose Your First Step:**
@@ -841,39 +841,39 @@ Based on TechCorp's journey, which phase resonates most?
 
 **3. Define Success Metrics:**
 ```
-Before: _____________________
-Target: _____________________
-Timeline: _____________________
-How to measure: _____________________
+Before: ___
+Target: ___
+Timeline: ___
+How to measure: ___
 ```
 
 **4. Create Your 90-Day Plan:**
 
 **Month 1:**
-- Week 1: _____________________
-- Week 2: _____________________
-- Week 3: _____________________
-- Week 4: _____________________
+- Week 1: ___
+- Week 2: ___
+- Week 3: ___
+- Week 4: ___
 
 **Month 2:**
-- Week 1: _____________________
-- Week 2: _____________________
-- Week 3: _____________________
-- Week 4: _____________________
+- Week 1: ___
+- Week 2: ___
+- Week 3: ___
+- Week 4: ___
 
 **Month 3:**
-- Week 1: _____________________
-- Week 2: _____________________
-- Week 3: _____________________
-- Week 4: _____________________
+- Week 1: ___
+- Week 2: ___
+- Week 3: ___
+- Week 4: ___
 
 **5. Identify Resources Needed:**
 ```
-Tools: _____________________
-Training: _____________________
-Budget: _____________________
-People: _____________________
-Executive support: _____________________
+Tools: ___
+Training: ___
+Budget: ___
+People: ___
+Executive support: ___
 ```
 
 ### Practical Exercise: Your First Automation

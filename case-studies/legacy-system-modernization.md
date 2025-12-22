@@ -1443,8 +1443,8 @@ Testing:
 **Answer these questions:**
 
 1. **What service would you extract first?**
-   - Service name: _____________________
-   - Why this service: _____________________
+   - Service name: ___
+   - Why this service: ___
 
 2. **Service characteristics:**
    - Well-defined boundary? ☐ Yes ☐ No
@@ -1460,9 +1460,9 @@ Testing:
    - Gradual cutover? ☐ Yes ☐ No
 
 4. **Success criteria:**
-   - Performance target: _____________________
-   - Availability target: _____________________
-   - Timeline: _____________________
+   - Performance target: ___
+   - Availability target: ___
+   - Timeline: ___
 
 ---
 
