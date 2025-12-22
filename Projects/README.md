@@ -55,34 +55,44 @@ Implement comprehensive CI/CD:
 
 **Outcome:** Fully automated deployment pipeline with quality gates.
 
-### [Project 4: Capstone Project](./04-capstone-project.md)
+### [Project 4: Build a Complete DevOps Pipeline](./04-complete-devops-pipeline.md)
 
 **Time:** 12-16 hours  
 **Prerequisites:** All modules  
 **Skills:** Everything learned in the course
 
-Build a production-ready application from scratch:
+Build a production-ready application from scratch with complete DevOps practices:
 
 - Choose your own application (provided suggestions)
 - Complete DevOps workflow:
   - Version control with Git
   - Containerization with Docker
-  - CI/CD pipeline
-  - Logging and monitoring
-  - Security best practices
+  - CI/CD pipeline with GitHub Actions
+  - Infrastructure as Code
+  - Monitoring and logging
+  - Comprehensive security implementation
   - Complete documentation
+  - Presentation component
 
-**Outcome:** Portfolio-ready project demonstrating all DevOps skills.
+**Outcome:** Portfolio-ready capstone project demonstrating mastery of all DevOps skills.
 
-## 🏆 Success Criteria
+## 🏆 Project Structure
 
-Each project includes:
+Each project now includes comprehensive learning resources:
 
-- ✅ Clear requirements and acceptance criteria
-- ✅ Step-by-step guidance
-- ✅ Common pitfalls and solutions
-- ✅ Bonus challenges for extra practice
-- ✅ Self-assessment checklist
+### Core Components
+- ✅ **Main Project File**: Clear requirements and acceptance criteria
+- ✅ **starter-code/**: Basic scaffolding and setup instructions with pre-configured dependencies
+- ✅ **checkpoints.md**: Step-by-step milestones with verification steps and troubleshooting hints
+- ✅ **rubric.md**: Detailed grading criteria with point allocation and examples
+- ✅ **solutions/**: Multiple implementation approaches (beginner/intermediate/advanced) with extensive comments
+- ✅ **extensions.md**: Ways to expand each project with advanced features and integrations
+
+### Additional Resources (Project 4)
+- ✅ **Architecture templates**: System design and documentation templates
+- ✅ **Weekly milestones**: Detailed 4-week timeline with daily tasks
+- ✅ **Peer review guidelines**: Structured review process and feedback format
+- ✅ **Presentation rubric**: Comprehensive evaluation criteria for demos
 
 ## 💡 Tips for Success
 
