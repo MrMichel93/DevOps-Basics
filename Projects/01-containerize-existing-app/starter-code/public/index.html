@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Task App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card h2 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+        
+        .endpoint {
+            background: white;
+            border-left: 4px solid #667eea;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        
+        .method {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            margin-right: 10px;
+        }
+        
+        .get { background: #10b981; color: white; }
+        .post { background: #f59e0b; color: white; }
+        .put { background: #3b82f6; color: white; }
+        .delete { background: #ef4444; color: white; }
+        
+        .path {
+            font-family: 'Courier New', monospace;
+            color: #64748b;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        #healthStatus {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Simple Task App</h1>
+        <p class="subtitle">Dockerization Project - Starter Code</p>
+        <span class="status">✓ Running</span>
+        
+        <div class="card">
+            <h2>Available Endpoints</h2>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="path">/health</span>
+                <span> - Health check</span>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="path">/api/tasks</span>
+                <span> - List all tasks</span>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="path">/api/tasks</span>
+                <span> - Create new task</span>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="path">/api/tasks/:id</span>
+                <span> - Get task by ID</span>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method put">PUT</span>
+                <span class="path">/api/tasks/:id</span>
+                <span> - Update task</span>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method delete">DELETE</span>
+                <span class="path">/api/tasks/:id</span>
+                <span> - Delete task</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Quick Test</h2>
+            <p style="margin-bottom: 15px; color: #64748b;">Test the health endpoint:</p>
+            <button onclick="checkHealth()">Check Health Status</button>
+            <div id="healthStatus"></div>
+        </div>
+        
+        <div class="card">
+            <h2>Next Steps</h2>
+            <ol style="margin-left: 20px; color: #475569; line-height: 1.8;">
+                <li>Review the code in the <code>src/</code> directory</li>
+                <li>Create a <code>Dockerfile</code> to containerize this app</li>
+                <li>Create <code>docker-compose.yml</code> for multi-service setup</li>
+                <li>Follow the checkpoints in <code>checkpoints.md</code></li>
+                <li>Optimize and secure your containers</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        async function checkHealth() {
+            const statusDiv = document.getElementById('healthStatus');
+            statusDiv.style.display = 'block';
+            statusDiv.className = '';
+            statusDiv.textContent = 'Checking...';
+            
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                
+                if (response.ok) {
+                    statusDiv.className = 'success';
+                    statusDiv.textContent = `✓ Healthy! Uptime: ${Math.floor(data.uptime)}s | Environment: ${data.environment}`;
+                } else {
+                    statusDiv.className = 'error';
+                    statusDiv.textContent = '✗ Health check failed';
+                }
+            } catch (error) {
+                statusDiv.className = 'error';
+                statusDiv.textContent = '✗ Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
