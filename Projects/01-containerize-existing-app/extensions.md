@@ -445,7 +445,6 @@ Implement comprehensive security measures.
 - [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)
 - [12-Factor App](https://12factor.net/)
 - [Container Security Best Practices](https://sysdig.com/blog/dockerfile-best-practices/)
-- [Production-Ready Docker](https://dockercon2018.hubs.vidyard.com/watch/k3Cv676wmAHEJfz7nzYjgC)
 
 ---
 
