@@ -496,7 +496,6 @@ clean = bleach.clean(html, tags=['p', 'b'])
 
 ## 🔗 Resources
 
-- [Interview Bit - Networking](https://www.interviewbit.com/networking-interview-questions/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [LeetCode](https://leetcode.com/)
 - [Pramp](https://www.pramp.com/) - Mock interviews
