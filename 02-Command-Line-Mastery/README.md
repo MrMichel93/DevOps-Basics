@@ -399,7 +399,6 @@ tar, gzip, zip, unzip
 
 ## 📖 Resources
 
-- [GNU Coreutils Manual](https://www.gnu.org/software/coreutils/manual/)
 - [Bash Guide](https://mywiki.wooledge.org/BashGuide)
 - [Command Line Crash Course](https://learnpythonthehardway.org/book/appendixa.html)
 - [Explain Shell](https://explainshell.com/) - Explains any command
